@@ -1,0 +1,231 @@
+.cb{
+  clear:both;
+}
+
+#open-wrapper{
+  position:relative;
+
+}
+
+#opener{
+  display:block;
+  height:100vh; 
+  width:100%; 
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:0;
+  background:black;
+
+}
+
+#opener.end{ 
+  position:absolute;
+  top:auto;
+
+}
+
+#opener img{
+  position:absolute;
+  width:40%;
+  top:50%;
+  left:5%;
+  -webkit-transform:translateY(-50%); -ms-transform:translateY(-50%); transform:translateY(-50%);
+}
+
+#opener .trigger-pixel{
+  width:1px;
+  height:1px; 
+}
+
+.opening-story{
+  display:block;
+  height:auto;
+  width:40%;
+  position:relative;
+  margin:250px 10% 150px 0;
+  float:right;
+  z-index:1;
+  color:gray;
+}
+
+#character-wrap{
+  width:100%;
+  height:100vh;
+  z-index:2;
+
+}
+
+#trigger-character{
+  position:absolute;
+  width:50px;
+  height:200px;
+  right:-50px;
+  top:50%;
+  margin-top:-100px;
+  background:green;
+  opacity:0;
+  transition: all .5s ease-in-out;
+}
+
+#character-chart{
+  position:relative;
+  width:100%; 
+  height:100%;
+  background:#701b32;
+  z-index:5;
+  overflow-x:hidden;
+}
+
+#character-chart.tabbed{
+  position:fixed !important;
+  left:-100%;
+  top:0;
+  overflow-x:visible;
+}
+
+#character-chart.open{
+  transition: all .5s ease-in-out;
+}
+
+
+#character-chart.tabbed #trigger-character{
+  opacity:1;
+}
+
+#character-chart .characters{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:90%;
+  text-align:center;
+  -webkit-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%);
+}
+
+#character-chart .characters .character{
+  display:inline-block;
+  width:31%;
+  margin:25px 0;
+  background:rgba(255,255,255,0.5);
+  border:1px solid #ccc;
+}
+
+#character-chart .characters .character img{
+  float:left;
+  max-width:40%;
+  margin-right:5%;
+}
+
+#character-chart .characters .character .character-info{
+  float:left;
+  max-width:45%;
+  text-align:left;
+  color:#fff;
+}
+
+#full-story{
+  width:100%; 
+  height:auto;
+  padding: 50px 10%;
+  box-sizing:border-box;
+  font-size:20px;
+  position:relative;
+  z-index:1;
+}
+
+#full-story .trigger-box{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+}
+
+#full-story .trigger-box .trigger{
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:1px;
+  width:1px;
+}
+
+#full-story .character-section{
+  position:relative;
+  width:90%; 
+  margin:0 auto 50px;
+
+}
+
+#full-story .character-section h3{
+  position:absolute;
+  width:20%;
+  top:0;
+  left:0;
+}
+
+#full-story .character-section p{
+  position:relative;
+  width:70%;
+  float:right;
+}
+
+#full-story .chapter-header{
+  position:relative;
+  width:100%;
+  height:250px;
+  margin-bottom:75px;
+  background-position:center center;
+  background-size:cover;
+  transition: all 1.5s ease-in-out;
+}
+
+#full-story .chapter-header .title{
+  position:absolute;
+  width:100%;
+  top:-20px;
+  left:0;
+  right:0;
+  opacity:0;
+  text-align:center;
+  color:#fff;
+  z-index:2;
+  font-size:30px;
+  text-transform:uppercase;
+  transition: all 1s ease-in-out;
+  overflow:hidden;
+}
+
+#full-story .chapter-header .texture{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  opacity:0;
+  background-image:url(../img/texture.png);
+  transition: all 1.5s ease-in-out;
+}
+
+#full-story .chapter-header.on{
+  height:150px;
+}
+
+#full-story .chapter-header.on .texture{
+  opacity:0.5;
+}
+
+#full-story .chapter-header.on .title{
+  opacity:1;
+  top:60px;
+}
+
+#full-story .chapter-header.chapter-1{
+  background-image:url(../img/chapter-header-1.png);
+}
+
+#full-story .chapter-header.chapter-2{
+
+  background-image:url(../img/chapter-header-1.png);
+}
