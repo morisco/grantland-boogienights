@@ -27,7 +27,11 @@
         <script type='text/javascript' src='http://grantland.vipstage.10uplabs.com/wp-includes/js/jquery/jquery.js'></script>
     </head>
     <body class="single single-grantland_feature">
-
+        <header>
+            <a href="http://grantland.com" class="grantland-logo"><img src="img/grantland-logo.png" alt="Grantland" /></a>
+            <a href="http://twitter.com/intent/tweet?text=&url=" class="twitter" target="_blank"></a>
+            <a href="http://facebook.com/sharer/sharer.php?u=http://grantland.com" target="_blank" class="facebook"></a>
+        </header>
         <div id="boogie-nights">
             <div id="open-wrapper">
                 <div id="opener">
@@ -74,37 +78,65 @@
                     <div class="title">Chapter 1</div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae est est. Proin nec risus ornare, sagittis nisl sed, pellentesque justo. Aliquam pellentesque hendrerit sapien, eget lacinia tortor lobortis a. Quisque vestibulum nisl a suscipit egestas. Duis sit amet dolor nisl. Morbi mollis nisi eu lectus pellentesque maximus. Donec ante diam, aliquam tincidunt neque a, pretium porttitor massa.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Nam sodales mi sed leo tincidunt convallis et sed erat. Sed pretium ligula sit amet porta accumsan. Curabitur at nisl at tortor dictum gravida. Proin feugiat, odio sit amet commodo gravida, ligula nulla sodales nibh, id iaculis sem magna id nisi. Morbi efficitur mauris eu eros ullamcorper sollicitudin. Pellentesque nec nulla ornare quam bibendum cursus non non felis. In vitae elit sit amet orci condimentum fermentum. Mauris elementum id lectus sed placerat. Fusce eros felis, dapibus blandit libero a, varius luctus nisl. Nulla sit amet fringilla metus, at imperdiet ligula. Nulla sit amet justo congue mi pellentesque laoreet. Donec aliquet risus quis dui feugiat, vel bibendum dui egestas. Fusce placerat mauris vel turpis rhoncus malesuada. Pellentesque urna neque, finibus eget laoreet sit amet, cursus in tellus.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Pellentesque in odio orci. Quisque eget lacus ornare, pulvinar augue vulputate, feugiat diam. Donec vehicula leo quis ipsum iaculis venenatis. Quisque ultrices, sem eget pulvinar varius, felis sem cursus sem, eu aliquam dui turpis vel arcu. Fusce fermentum volutpat elit id iaculis. Nam luctus sollicitudin quam ac egestas. Donec laoreet leo in magna faucibus, id posuere est consectetur. Suspendisse convallis neque quis blandit convallis. Nullam in sem finibus, egestas ligula sed, imperdiet tortor. Nulla facilisi. Cras vehicula placerat quam, sed suscipit eros auctor at. Nam tristique orci nulla, et ultricies diam elementum quis. Nam efficitur sodales faucibus.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Donec pulvinar condimentum aliquam. Aliquam libero justo, scelerisque eget turpis tincidunt, euismod sodales dui. Quisque semper ipsum vel odio ultrices, et egestas arcu luctus. Cras rhoncus magna eu cursus facilisis. Maecenas at diam ac sapien congue condimentum. Donec sollicitudin suscipit rutrum. Ut at ex risus. Suspendisse facilisis, purus nec laoreet vehicula, orci sem viverra tellus, ac pretium quam ipsum ac libero. Sed accumsan odio et massa luctus malesuada. Aliquam erat volutpat. Ut eleifend, ex non tristique sagittis, tellus magna gravida turpis, venenatis finibus urna arcu ut sapien. Praesent molestie lacinia augue, nec hendrerit leo placerat in. Praesent consequat pellentesque scelerisque. Aenean quis pharetra libero. Sed eget purus semper, vestibulum est ut, interdum enim. Fusce lobortis luctus nisi, ac dictum tellus vulputate quis.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Praesent pharetra laoreet ante. Fusce facilisis justo quis fermentum congue. Sed a arcu eu justo auctor euismod. Sed cursus placerat nulla, sed scelerisque arcu auctor et. Maecenas fermentum enim sed risus accumsan, non tempus diam tempus. Nam et turpis ornare, volutpat leo id, euismod risus. Duis malesuada imperdiet augue rhoncus pretium. Pellentesque at justo nibh. Mauris sagittis finibus turpis, quis lobortis elit commodo ut. Sed mollis tortor a urna dictum dictum. Aenean quis nisi id quam scelerisque sollicitudin quis nec orci. Sed nec tortor mauris.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae est est. Proin nec risus ornare, sagittis nisl sed, pellentesque justo. Aliquam pellentesque hendrerit sapien, eget lacinia tortor lobortis a. Quisque vestibulum nisl a suscipit egestas. Duis sit amet dolor nisl. Morbi mollis nisi eu lectus pellentesque maximus. Donec ante diam, aliquam tincidunt neque a, pretium porttitor massa.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Nam sodales mi sed leo tincidunt convallis et sed erat. Sed pretium ligula sit amet porta accumsan. Curabitur at nisl at tortor dictum gravida. Proin feugiat, odio sit amet commodo gravida, ligula nulla sodales nibh, id iaculis sem magna id nisi. Morbi efficitur mauris eu eros ullamcorper sollicitudin. Pellentesque nec nulla ornare quam bibendum cursus non non felis. In vitae elit sit amet orci condimentum fermentum. Mauris elementum id lectus sed placerat. Fusce eros felis, dapibus blandit libero a, varius luctus nisl. Nulla sit amet fringilla metus, at imperdiet ligula. Nulla sit amet justo congue mi pellentesque laoreet. Donec aliquet risus quis dui feugiat, vel bibendum dui egestas. Fusce placerat mauris vel turpis rhoncus malesuada. Pellentesque urna neque, finibus eget laoreet sit amet, cursus in tellus.</p>
                 <div class="cb"></div>
                 </div>
@@ -113,42 +145,74 @@
                     <div class="title">Chapter 2</div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Pellentesque in odio orci. Quisque eget lacus ornare, pulvinar augue vulputate, feugiat diam. Donec vehicula leo quis ipsum iaculis venenatis. Quisque ultrices, sem eget pulvinar varius, felis sem cursus sem, eu aliquam dui turpis vel arcu. Fusce fermentum volutpat elit id iaculis. Nam luctus sollicitudin quam ac egestas. Donec laoreet leo in magna faucibus, id posuere est consectetur. Suspendisse convallis neque quis blandit convallis. Nullam in sem finibus, egestas ligula sed, imperdiet tortor. Nulla facilisi. Cras vehicula placerat quam, sed suscipit eros auctor at. Nam tristique orci nulla, et ultricies diam elementum quis. Nam efficitur sodales faucibus.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Donec pulvinar condimentum aliquam. Aliquam libero justo, scelerisque eget turpis tincidunt, euismod sodales dui. Quisque semper ipsum vel odio ultrices, et egestas arcu luctus. Cras rhoncus magna eu cursus facilisis. Maecenas at diam ac sapien congue condimentum. Donec sollicitudin suscipit rutrum. Ut at ex risus. Suspendisse facilisis, purus nec laoreet vehicula, orci sem viverra tellus, ac pretium quam ipsum ac libero. Sed accumsan odio et massa luctus malesuada. Aliquam erat volutpat. Ut eleifend, ex non tristique sagittis, tellus magna gravida turpis, venenatis finibus urna arcu ut sapien. Praesent molestie lacinia augue, nec hendrerit leo placerat in. Praesent consequat pellentesque scelerisque. Aenean quis pharetra libero. Sed eget purus semper, vestibulum est ut, interdum enim. Fusce lobortis luctus nisi, ac dictum tellus vulputate quis.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Praesent pharetra laoreet ante. Fusce facilisis justo quis fermentum congue. Sed a arcu eu justo auctor euismod. Sed cursus placerat nulla, sed scelerisque arcu auctor et. Maecenas fermentum enim sed risus accumsan, non tempus diam tempus. Nam et turpis ornare, volutpat leo id, euismod risus. Duis malesuada imperdiet augue rhoncus pretium. Pellentesque at justo nibh. Mauris sagittis finibus turpis, quis lobortis elit commodo ut. Sed mollis tortor a urna dictum dictum. Aenean quis nisi id quam scelerisque sollicitudin quis nec orci. Sed nec tortor mauris.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae est est. Proin nec risus ornare, sagittis nisl sed, pellentesque justo. Aliquam pellentesque hendrerit sapien, eget lacinia tortor lobortis a. Quisque vestibulum nisl a suscipit egestas. Duis sit amet dolor nisl. Morbi mollis nisi eu lectus pellentesque maximus. Donec ante diam, aliquam tincidunt neque a, pretium porttitor massa.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Nam sodales mi sed leo tincidunt convallis et sed erat. Sed pretium ligula sit amet porta accumsan. Curabitur at nisl at tortor dictum gravida. Proin feugiat, odio sit amet commodo gravida, ligula nulla sodales nibh, id iaculis sem magna id nisi. Morbi efficitur mauris eu eros ullamcorper sollicitudin. Pellentesque nec nulla ornare quam bibendum cursus non non felis. In vitae elit sit amet orci condimentum fermentum. Mauris elementum id lectus sed placerat. Fusce eros felis, dapibus blandit libero a, varius luctus nisl. Nulla sit amet fringilla metus, at imperdiet ligula. Nulla sit amet justo congue mi pellentesque laoreet. Donec aliquet risus quis dui feugiat, vel bibendum dui egestas. Fusce placerat mauris vel turpis rhoncus malesuada. Pellentesque urna neque, finibus eget laoreet sit amet, cursus in tellus.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Pellentesque in odio orci. Quisque eget lacus ornare, pulvinar augue vulputate, feugiat diam. Donec vehicula leo quis ipsum iaculis venenatis. Quisque ultrices, sem eget pulvinar varius, felis sem cursus sem, eu aliquam dui turpis vel arcu. Fusce fermentum volutpat elit id iaculis. Nam luctus sollicitudin quam ac egestas. Donec laoreet leo in magna faucibus, id posuere est consectetur. Suspendisse convallis neque quis blandit convallis. Nullam in sem finibus, egestas ligula sed, imperdiet tortor. Nulla facilisi. Cras vehicula placerat quam, sed suscipit eros auctor at. Nam tristique orci nulla, et ultricies diam elementum quis. Nam efficitur sodales faucibus.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Donec pulvinar condimentum aliquam. Aliquam libero justo, scelerisque eget turpis tincidunt, euismod sodales dui. Quisque semper ipsum vel odio ultrices, et egestas arcu luctus. Cras rhoncus magna eu cursus facilisis. Maecenas at diam ac sapien congue condimentum. Donec sollicitudin suscipit rutrum. Ut at ex risus. Suspendisse facilisis, purus nec laoreet vehicula, orci sem viverra tellus, ac pretium quam ipsum ac libero. Sed accumsan odio et massa luctus malesuada. Aliquam erat volutpat. Ut eleifend, ex non tristique sagittis, tellus magna gravida turpis, venenatis finibus urna arcu ut sapien. Praesent molestie lacinia augue, nec hendrerit leo placerat in. Praesent consequat pellentesque scelerisque. Aenean quis pharetra libero. Sed eget purus semper, vestibulum est ut, interdum enim. Fusce lobortis luctus nisi, ac dictum tellus vulputate quis.</p>
                 <div class="cb"></div>
                 </div>
                 <div class="character-section">
-                <h3>Luiz Guzman</h3>
+                <div class="actor">
+                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
+                    <h3>Luiz Guzman</h3>
+                    <div class="character">Maurice TT Rodriguez</div>
+                </div>
                 <p>Praesent pharetra laoreet ante. Fusce facilisis justo quis fermentum congue. Sed a arcu eu justo auctor euismod. Sed cursus placerat nulla, sed scelerisque arcu auctor et. Maecenas fermentum enim sed risus accumsan, non tempus diam tempus. Nam et turpis ornare, volutpat leo id, euismod risus. Duis malesuada imperdiet augue rhoncus pretium. Pellentesque at justo nibh. Mauris sagittis finibus turpis, quis lobortis elit commodo ut. Sed mollis tortor a urna dictum dictum. Aenean quis nisi id quam scelerisque sollicitudin quis nec orci. Sed nec tortor mauris.</p>
                 <div class="cb"></div>
                 </div>
