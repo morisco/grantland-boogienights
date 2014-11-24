@@ -36,19 +36,34 @@
             <div id="open-wrapper">
                 <div id="opener">
                     <div class="trigger-pixel"></div>
-                    <img src="img/boogie-nights.png" alt="boogie nights" />
+                    <img src="img/opening-1.png" class="open-image opener-1 triggered" alt="boogie nights" />
+                    <img src="img/opening-2.png" class="open-image opener-2" alt="boogie nights" />
+                    <img src="img/opening-3.png" class="open-image opener-3" alt="boogie nights" />
+                    <img src="img/opening-4.png" class="open-image opener-4" alt="boogie nights" />
                 </div>
                 <div class="opening-story">
-                    <p><em>Boogie Nights </em>began as a teenage boy’s wet dream. Nearly a decade before its 1997 release, it was a fantasy to chase. The year was 1988. The boy was a precocious, plotting 17-year-old named Paul Thomas Anderson. He grew up in Los Angeles’s San Fernando Valley, obsessed with the studios all around him. He wanted in and hustled plenty — sneaking onto sets, working a Betamax camera from the age of 12, filming everything — but he also gained entrée from his father, Ernie, who was famous from his voice-over work for ABC on shows like <em>The Love Boat</em>. The Andersons had a pool — where funny-guy actors like Tim Conway and Robert Ridgely frequently lounged, cracking jokes and pouring drinks — and their own Shetland pony. The absurd and the domestic were one and the same.</p>
+                    <div class="open-trigger" data-trigger-index="1"></div>
+                    <p><em>Boogie Nights </em>began as a teenage boy’s wet dream. Nearly a decade before its 1997 release, it was a fantasy to chase. The year was 1988. The boy was a precocious, plotting 17-year-old named Paul Thomas Anderson. He grew up in Los Angeles’s San Fernando Valley, obsessed with the studios all around him. He wanted in and hustled plenty — sneaking onto sets, working a Betamax camera from the age of 12, <a class="footnote-link" data-footnote-id="1" href="#fn-1"><sup id="ss-1">1</sup></a> filming everything — but he also gained entrée from his father, Ernie, who was famous from his voice-over work for ABC on shows like <em>The Love Boat</em>. The Andersons had a pool — where funny-guy actors like Tim Conway and Robert Ridgely frequently lounged, cracking jokes and pouring drinks — and their own Shetland pony. The absurd and the domestic were one and the same.</p>
 
                     <p>Anderson also became consumed by porn and the Bizarro Hollywood industry that claimed the Valley as its Fertile Crescent. His relationship to the material differed from the average high schooler. There was the fucking, sure. But the real seduction was in the imagined backstories, the circumstantial tragicomedies of the casts and crews that inspired Anderson to write and film <em>The Dirk Diggler Story</em>, a 31-minute mockumentary-style short about the pursuit, delusions, and costs of fame.</p>
 
                     <p>At 26, Anderson’s first full-length feature, <em>Sydney</em>, had run into problems. The production company Rysher Entertainment made its own cuts to his Reno-set gambling story and released it under a different title, <em>Hard Eight</em>. During the process, Anderson squabbled with producers, barred them from the set, and refused to show any edited footage or make any significant suggested changes. But he didn’t have final cut and was eventually fired and locked out of his own editing room.</p>
+                    <div class="open-trigger" data-trigger-index="2"></div>
+                    <p>In the fallout, <a href="http://harpoonstudios.com/fromStoney/BESTOFCREATIVESCREENWRITING.PDF" target="_blank">Anderson told a reporter</a> that his experience on <em>Sydney</em> "created a sort of paranoia and guardedness in me that I'm glad I have because that will never, ever happen to me again." When he set out to film <em>Boogie Nights</em>, it was with a resolve bordering on arrogance. Compromise wasn’t part of the plan. Still, after an intense production and postproduction period <a class="footnote-link" data-footnote-id="2" href="#fn-2"><sup id="ss-2">2</sup></a> — one in which the director had to manage a cranky, confused Burt Reynolds and an untested, rapping underwear model named Mark Wahlberg — Anderson was forced once again to fight studio heads for his cut of the film.</p>
 
+                    <p>But Anderson’s vision prevailed this time. Nearly 20 years later, <em>Boogie Nights</em> endures. For its beautiful portrait of nontraditional families; for Reynolds and Wahlberg, the surrogate father and son, who were never better; for Philip Seymour Hoffman, squeezing into character and breaking hearts; for its prodigy director sticking to his guns and nailing it; for John C. Reilly’s hot-tub poetry; for Roller Girl. Is everybody ready? This is the making and nearly unmaking of <em>Boogie Nights</em>.</p>
+
+                    <p><em>Boogie Nights </em>began as a teenage boy’s wet dream. Nearly a decade before its 1997 release, it was a fantasy to chase. The year was 1988. The boy was a precocious, plotting 17-year-old named Paul Thomas Anderson. He grew up in Los Angeles’s San Fernando Valley, obsessed with the studios all around him. He wanted in and hustled plenty — sneaking onto sets, working a Betamax camera from the age of 12, filming everything — but he also gained entrée from his father, Ernie, who was famous from his voice-over work for ABC on shows like <em>The Love Boat</em>. The Andersons had a pool — where funny-guy actors like Tim Conway and Robert Ridgely frequently lounged, cracking jokes and pouring drinks — and their own Shetland pony. The absurd and the domestic were one and the same.</p>
+                    <div class="open-trigger" data-trigger-index="3"></div>
+                    <p>Anderson also became consumed by porn and the Bizarro Hollywood industry that claimed the Valley as its Fertile Crescent. His relationship to the material differed from the average high schooler. There was the fucking, sure. But the real seduction was in the imagined backstories, the circumstantial tragicomedies of the casts and crews that inspired Anderson to write and film <em>The Dirk Diggler Story</em>, a 31-minute mockumentary-style short about the pursuit, delusions, and costs of fame.</p>
+
+                    <p>At 26, Anderson’s first full-length feature, <em>Sydney</em>, had run into problems. The production company Rysher Entertainment made its own cuts to his Reno-set gambling story and released it under a different title, <em>Hard Eight</em>. During the process, Anderson squabbled with producers, barred them from the set, and refused to show any edited footage or make any significant suggested changes. But he didn’t have final cut and was eventually fired and locked out of his own editing room.</p>
+                    <div class="open-trigger" data-trigger-index="4"></div>
                     <p>In the fallout, <a href="http://harpoonstudios.com/fromStoney/BESTOFCREATIVESCREENWRITING.PDF" target="_blank">Anderson told a reporter</a> that his experience on <em>Sydney</em> "created a sort of paranoia and guardedness in me that I'm glad I have because that will never, ever happen to me again." When he set out to film <em>Boogie Nights</em>, it was with a resolve bordering on arrogance. Compromise wasn’t part of the plan. Still, after an intense production and postproduction period — one in which the director had to manage a cranky, confused Burt Reynolds and an untested, rapping underwear model named Mark Wahlberg — Anderson was forced once again to fight studio heads for his cut of the film.</p>
 
                     <p>But Anderson’s vision prevailed this time. Nearly 20 years later, <em>Boogie Nights</em> endures. For its beautiful portrait of nontraditional families; for Reynolds and Wahlberg, the surrogate father and son, who were never better; for Philip Seymour Hoffman, squeezing into character and breaking hearts; for its prodigy director sticking to his guns and nailing it; for John C. Reilly’s hot-tub poetry; for Roller Girl. Is everybody ready? This is the making and nearly unmaking of <em>Boogie Nights</em>.</p>
                 </div>
+                
                 <div class="cb"></div>
             </div>
             <div id="character-wrap">
@@ -217,6 +232,11 @@
                 <div class="cb"></div>
                 </div>
             </div>
+            <ol id="footnotes">
+                <li data-footnote-index="1">This is a big ole test of the footnote.</li>
+                <li data-footnote-index="2">2! This is a big ole test of the footnote.</li>
+            </ol>
+            <div class="footnote-box" style="left: 573px; top: 7542px; width: 300px; display: block;"><a href="#" class="footnote-close">x</a><span></span></div>
         </div>
 
         <!-- Begin Footer -->

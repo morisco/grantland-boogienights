@@ -5,7 +5,40 @@
   });
 
   $(document).ready(function(){
-    $(window).on('scroll',watchScroll)
+    $(window).on('scroll',watchScroll);
+
+    $('.footnote-link').on('click',function(event){
+      event.preventDefault();
+      var footnote_id = $(this).attr('data-footnote-id');
+      var footnote_text = $('#footnotes li[data-footnote-index="'+footnote_id+'"]').text();
+      var offset_x = parseInt($(this).offset().left) - 150;
+      var offset_y = parseInt($(this).offset().top)  + 30;
+      $('.footnote-open').removeClass('footnote-open');
+      $(this).addClass('footnote-open');
+      $('.footnote-box').css({
+        'top'   : offset_y,
+        'left'  : offset_x,
+        'width' : 300
+      }).fadeIn();
+      $('.footnote-box span').html(footnote_text);
+    });
+
+    $('.footnote-close').on('click',function(event){
+      event.preventDefault();
+      $('.footnote-open').removeClass('footnote-open');
+      $('.footnote-box').fadeOut(function(){
+        $(this).removeAttr('style');
+        $('.footnote-box span').html('');
+      });
+    });
+
+    $('.open-trigger').onScreen({
+      doIn:function(){
+        var openIndex = $(this).attr('data-trigger-index');
+        $('#opener .triggered').removeClass('triggered');
+        $('#opener .opener-' + openIndex).addClass('triggered');
+      }
+    });
     $('#character-wrap').onScreen({
        direction: 'vertical',
        doIn: function() {
