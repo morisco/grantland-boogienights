@@ -1,3 +1,17 @@
+<?
+if ( !isset($_SERVER['PHP_AUTH_USER']) ) {
+header('WWW-Authenticate: Basic realm="PTB"');
+header('HTTP/1.0 401 Unauthorized');
+exit;
+}
+else {
+if ( $_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'boogie' ) {
+} else {
+  header('WWW-Authenticate: Basic realm="You Shall Not Pass"');
+  header('HTTP/1.0 401 Unauthorized');
+}
+}
+?>
 <!DOCTYPE HTML>
 <!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
 <!--[if lt IE 7 ]><html class="no-js ie6" lang="en-US"><![endif]-->
@@ -27,6 +41,45 @@
         <script type='text/javascript' src='http://grantland.vipstage.10uplabs.com/wp-includes/js/jquery/jquery.js'></script>
     </head>
     <body class="single single-grantland_feature">
+        <? 
+            include 'data.php';
+            function getMarkup($quote, $character){
+                $character_name = $quote['name'];
+                if(isset($quote['name-note'])){
+                    $character['name'] = $character['name'] . ' ' . $quote['name-note'];
+                }
+
+                echo    '<div class="character-section '.$quote['first_class'].'">'.
+                            '<div class="actor">'.
+                                '<img src="img/characters/'.$quote['name'].'.png" alt="'.$character_name.' as '.$character['role'].'" />'.
+                                '<div class="actor-text">'.
+                                    '<h3>'.$character['name'].'</h3>'.
+                                    '<div class="character">'.$character['role'].'</div>'.
+                                '</div>'.
+                            '</div>'.
+                            '<p>'.$quote['quote'].'</p>';
+                if(isset($quote['image']) && isset($quote['caption']) && isset($quote['credit'])){
+                    echo '<p class="inline-photo"><img src="'.$quote['image'].'" /><span class="caption">'.$quote['caption'].'</span> <span class="inline-credit">'.$quote['credit'].'</span></p>';
+                }
+
+                if(isset($quote['blockquote'])){
+                    echo '<blockquote>'.$quote['blockquote'].'</blockquote>';
+                }
+
+
+                if(isset($quote['pullquote'])){
+                    echo '<p class="boogie-pullquote">'.$quote['pullquote'].'</p>';
+                }
+
+                if(isset($quote['youtube'])){
+                    echo '<p class="youtube"><iframe id="ytplayer" type="text/html" width="100%" height="300" src="http://www.youtube.com/embed/'.$quote['youtube'].'?autoplay0" frameborder="0"></iframe></p>';
+                }
+
+                echo  '<div class="cb"></div>'.
+                        '</div>';
+            }
+        ?>
+
         <header>
             <a href="http://grantland.com" class="grantland-logo"><img src="img/grantland-logo.png" alt="Grantland" /></a>
             <a href="http://twitter.com/intent/tweet?text=&url=" class="twitter" target="_blank"></a>
@@ -36,207 +89,104 @@
             <div id="open-wrapper">
                 <div id="opener">
                     <div class="trigger-pixel"></div>
-                    <img src="img/opening-1.png" class="open-image opener-1 triggered" alt="boogie nights" />
+                    <img src="img/opening-1.png" class="open-image opener-1" alt="boogie nights" />
                     <img src="img/opening-2.png" class="open-image opener-2" alt="boogie nights" />
                     <img src="img/opening-3.png" class="open-image opener-3" alt="boogie nights" />
                     <img src="img/opening-4.png" class="open-image opener-4" alt="boogie nights" />
                 </div>
                 <div class="opening-story">
-                    <div class="open-trigger" data-trigger-index="1"></div>
-                    <p><em>Boogie Nights </em>began as a teenage boy’s wet dream. Nearly a decade before its 1997 release, it was a fantasy to chase. The year was 1988. The boy was a precocious, plotting 17-year-old named Paul Thomas Anderson. He grew up in Los Angeles’s San Fernando Valley, obsessed with the studios all around him. He wanted in and hustled plenty — sneaking onto sets, working a Betamax camera from the age of 12, <a class="footnote-link" data-footnote-id="1" href="#fn-1"><sup id="ss-1">1</sup></a> filming everything — but he also gained entrée from his father, Ernie, who was famous from his voice-over work for ABC on shows like <em>The Love Boat</em>. The Andersons had a pool — where funny-guy actors like Tim Conway and Robert Ridgely frequently lounged, cracking jokes and pouring drinks — and their own Shetland pony. The absurd and the domestic were one and the same.</p>
 
-                    <p>Anderson also became consumed by porn and the Bizarro Hollywood industry that claimed the Valley as its Fertile Crescent. His relationship to the material differed from the average high schooler. There was the fucking, sure. But the real seduction was in the imagined backstories, the circumstantial tragicomedies of the casts and crews that inspired Anderson to write and film <em>The Dirk Diggler Story</em>, a 31-minute mockumentary-style short about the pursuit, delusions, and costs of fame.</p>
+                    
+                    <div class="hed">
+                        <div class="hed-wrap">
+                            <h1>Livin&#8217; Thing:</h1>
+                            <h2>An Oral History <br/>of ‘Boogie Nights’</h2>
+                            <div class="open-trigger first" data-trigger-index="1"></div>
+                            <h4><strong>by alex french and howie kahn</strong><br/>illustrations by berto martinez</h4>
+                            <div class="scroll-arrow"></div>
+                        </div>
 
-                    <p>At 26, Anderson’s first full-length feature, <em>Sydney</em>, had run into problems. The production company Rysher Entertainment made its own cuts to his Reno-set gambling story and released it under a different title, <em>Hard Eight</em>. During the process, Anderson squabbled with producers, barred them from the set, and refused to show any edited footage or make any significant suggested changes. But he didn’t have final cut and was eventually fired and locked out of his own editing room.</p>
-                    <div class="open-trigger" data-trigger-index="2"></div>
-                    <p>In the fallout, <a href="http://harpoonstudios.com/fromStoney/BESTOFCREATIVESCREENWRITING.PDF" target="_blank">Anderson told a reporter</a> that his experience on <em>Sydney</em> "created a sort of paranoia and guardedness in me that I'm glad I have because that will never, ever happen to me again." When he set out to film <em>Boogie Nights</em>, it was with a resolve bordering on arrogance. Compromise wasn’t part of the plan. Still, after an intense production and postproduction period <a class="footnote-link" data-footnote-id="2" href="#fn-2"><sup id="ss-2">2</sup></a> — one in which the director had to manage a cranky, confused Burt Reynolds and an untested, rapping underwear model named Mark Wahlberg — Anderson was forced once again to fight studio heads for his cut of the film.</p>
+                    </div>
 
-                    <p>But Anderson’s vision prevailed this time. Nearly 20 years later, <em>Boogie Nights</em> endures. For its beautiful portrait of nontraditional families; for Reynolds and Wahlberg, the surrogate father and son, who were never better; for Philip Seymour Hoffman, squeezing into character and breaking hearts; for its prodigy director sticking to his guns and nailing it; for John C. Reilly’s hot-tub poetry; for Roller Girl. Is everybody ready? This is the making and nearly unmaking of <em>Boogie Nights</em>.</p>
+                    <div class="open-trigger first" data-trigger-index="2"></div>
+                    <p><span class="firstcharacter">B</span><em>oogie Nights</em> began as a teenage boy’s wet dream. Nearly a decade before its 1997 release, it was a fantasy to chase. The year was 1988. The boy was a precocious, plotting 17-year-old named Paul Thomas Anderson. He was growing up in Los Angeles’s San Fernando Valley, obsessed with the studios all around him. He wanted in and hustled plenty &mdash; sneaking onto sets, working a Betamax camera from the age of 12, filming everything &mdash; but he also gained entrée from his father, Ernie, who was famous from his voice-over work for ABC on shows like <em>The Love Boat</em>. The Andersons had a pool &mdash; where funny-guy actors like Tim Conway and Robert Ridgely frequently lounged, cracking jokes and pouring drinks &mdash; and their own Shetland pony. The absurd and the domestic were one and the same.</p>
 
-                    <p><em>Boogie Nights </em>began as a teenage boy’s wet dream. Nearly a decade before its 1997 release, it was a fantasy to chase. The year was 1988. The boy was a precocious, plotting 17-year-old named Paul Thomas Anderson. He grew up in Los Angeles’s San Fernando Valley, obsessed with the studios all around him. He wanted in and hustled plenty — sneaking onto sets, working a Betamax camera from the age of 12, filming everything — but he also gained entrée from his father, Ernie, who was famous from his voice-over work for ABC on shows like <em>The Love Boat</em>. The Andersons had a pool — where funny-guy actors like Tim Conway and Robert Ridgely frequently lounged, cracking jokes and pouring drinks — and their own Shetland pony. The absurd and the domestic were one and the same.</p>
-                    <div class="open-trigger" data-trigger-index="3"></div>
-                    <p>Anderson also became consumed by porn and the Bizarro Hollywood industry that claimed the Valley as its Fertile Crescent. His relationship to the material differed from the average high schooler. There was the fucking, sure. But the real seduction was in the imagined backstories, the circumstantial tragicomedies of the casts and crews that inspired Anderson to write and film <em>The Dirk Diggler Story</em>, a 31-minute mockumentary-style short about the pursuit, delusions, and costs of fame.</p>
+                    <p>Anderson also became consumed by porn and the Bizarro Hollywood industry that claimed the Valley as its Fertile Crescent. His relationship to the material differed from the average high schooler. There was the fucking, sure. But the real seduction was in the imagined backstories, the circumstantial tragicomedies of the casts and crews, which inspired Anderson to write and film <em>The Dirk Diggler Story</em>, a 32-minute mockumentary-style short about the pursuit, delusions, and costs of fame.</p>
 
-                    <p>At 26, Anderson’s first full-length feature, <em>Sydney</em>, had run into problems. The production company Rysher Entertainment made its own cuts to his Reno-set gambling story and released it under a different title, <em>Hard Eight</em>. During the process, Anderson squabbled with producers, barred them from the set, and refused to show any edited footage or make any significant suggested changes. But he didn’t have final cut and was eventually fired and locked out of his own editing room.</p>
+                    <div class="open-trigger first" data-trigger-index="3"></div>
+                    <p>At 26, Anderson’s first full-length feature, <em>Sydney</em>, had run into problems. The production company Rysher Entertainment made its own cuts to his Reno-set gambling story and released it under a different title, <em>Hard Eight</em>. During the process, Anderson squabbled with producers, barred them from the set, and refused to show any edited footage or make any significant suggested changes. But he didn’t have final cut and was eventually fired and locked out of his own editing room.</p>
+
+                    <p>In the fallout, <a href="http://harpoonstudios.com/fromStoney/BESTOFCREATIVESCREENWRITING.PDF" target="_blank">Anderson told a reporter</a> that his experience on <em>Sydney</em> "created a sort of paranoia and guardedness in me that I'm glad I have because that will never, ever happen to me again." When he set out to film <em>Boogie Nights</em>, it was with a resolve bordering on arrogance. Compromise wasn’t part of the plan. Still, after an intense production and postproduction period — one in which the director had to manage a cranky, confused Burt Reynolds and an untested, rapping underwear model named Mark Wahlberg — Anderson was forced once again to fight studio heads for his cut of the film.</p>
+
                     <div class="open-trigger" data-trigger-index="4"></div>
-                    <p>In the fallout, <a href="http://harpoonstudios.com/fromStoney/BESTOFCREATIVESCREENWRITING.PDF" target="_blank">Anderson told a reporter</a> that his experience on <em>Sydney</em> "created a sort of paranoia and guardedness in me that I'm glad I have because that will never, ever happen to me again." When he set out to film <em>Boogie Nights</em>, it was with a resolve bordering on arrogance. Compromise wasn’t part of the plan. Still, after an intense production and postproduction period — one in which the director had to manage a cranky, confused Burt Reynolds and an untested, rapping underwear model named Mark Wahlberg — Anderson was forced once again to fight studio heads for his cut of the film.</p>
+                    <p>But Anderson’s vision prevailed this time. Nearly 20 years later, <em>Boogie Nights</em> endures. For its beautiful portrait of nontraditional families; for Reynolds and Wahlberg, the surrogate father and son, who were never better; for Philip Seymour Hoffman, squeezing into character and breaking hearts; for its prodigy director sticking to his guns and nailing it; for John C. Reilly’s hot-tub poetry; for Roller Girl. Is everybody ready? This is the making and near unmaking of <em>Boogie Nights</em>.</p>
+                   
+                    
 
-                    <p>But Anderson’s vision prevailed this time. Nearly 20 years later, <em>Boogie Nights</em> endures. For its beautiful portrait of nontraditional families; for Reynolds and Wahlberg, the surrogate father and son, who were never better; for Philip Seymour Hoffman, squeezing into character and breaking hearts; for its prodigy director sticking to his guns and nailing it; for John C. Reilly’s hot-tub poetry; for Roller Girl. Is everybody ready? This is the making and nearly unmaking of <em>Boogie Nights</em>.</p>
                 </div>
                 
                 <div class="cb"></div>
             </div>
             <div id="character-wrap">
                 <div class="trigger-character-off"></div>
+                <div class="character-title">AS TOLD BY...</div>
                 <div id="character-chart">
                     <div id="trigger-character"></div>
                     <div class="characters">
-                    <? for($i=0; $i<9; $i++){ ?>
-                        <div class="character">
-                            <img src="http://placekitten.com/g/160/120" class="character-headshot" />
-                            <div class="character-info">
-                                <div class="role">Maurice TT Rodriguez</div>
-                                <div class="actor">Luis Guzmán</div>
-                            </div>
-                        </div>
-                    <? } ?>
+                    <? foreach($displayCharacters as $chartCharacter){ 
+                        $characterImage = $chartCharacter;
+                        $chartCharacter = $characters[$chartCharacter];
+                        echo    '<div class="character">'.
+                                    '<img src="img/characters/'.$characterImage.'.png" class="character-headshot" />'.
+                                    '<div class="character-info">'.
+                                        '<div class="actor">'.$chartCharacter['name'].'</div>'.
+                                        '<div class="role">'.$chartCharacter['role'].'</div>'.
+                                    '</div>'.
+                                '</div>';
+                     } ?>
+                     <div class="cb"></div>
                     </div>
                 </div>
             </div>
             <div id="full-story">
-                <div class="trigger-box">
-                    <div class="trigger"></div>
-                </div>
+                <?php 
+                    $first_mentions = array();
+                    foreach ($chapters as $key => $chapter){
 
-                <div class="chapter-header chapter-1">
-                    <div class="texture"></div>
-                    <div class="title">Chapter 1</div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae est est. Proin nec risus ornare, sagittis nisl sed, pellentesque justo. Aliquam pellentesque hendrerit sapien, eget lacinia tortor lobortis a. Quisque vestibulum nisl a suscipit egestas. Duis sit amet dolor nisl. Morbi mollis nisi eu lectus pellentesque maximus. Donec ante diam, aliquam tincidunt neque a, pretium porttitor massa.</p>
+                        echo '<div class="chapter-header chapter-'.$key.'" data-background-position="'.$chapter['background-position'].'">'.
+                                '<img src="'.$chapter['image'].'" />'.
+                                '<div class="texture"></div>'.
+                                '<div class="title"><div class="number">Chapter '.$chapter['number'].'</div><div class="title-words">'.$chapter['title'].'</div></div>'.
+                             '</div>';
+
+                        if($key == '1'){
+                            print_r('<div class="instructions">roll over names to see more info &dagger;</div>');
+                        }
+                        $story_chapter = 'chapter-'.$key;
+                        foreach($story[$story_chapter] as $quote){
+                            if(!in_array($quote['name'],$first_mentions)){
+                                array_push($first_mentions,$quote['name']);
+                                $quote['first_class'] = 'initial';
+                            } else{
+                                $quote['first_class'] = '';
+                            }
+
+                            $character = $characters[$quote['name']];
+                            getMarkup($quote, $character);
+                        }
+                    }  
+                ?>
                 <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Nam sodales mi sed leo tincidunt convallis et sed erat. Sed pretium ligula sit amet porta accumsan. Curabitur at nisl at tortor dictum gravida. Proin feugiat, odio sit amet commodo gravida, ligula nulla sodales nibh, id iaculis sem magna id nisi. Morbi efficitur mauris eu eros ullamcorper sollicitudin. Pellentesque nec nulla ornare quam bibendum cursus non non felis. In vitae elit sit amet orci condimentum fermentum. Mauris elementum id lectus sed placerat. Fusce eros felis, dapibus blandit libero a, varius luctus nisl. Nulla sit amet fringilla metus, at imperdiet ligula. Nulla sit amet justo congue mi pellentesque laoreet. Donec aliquet risus quis dui feugiat, vel bibendum dui egestas. Fusce placerat mauris vel turpis rhoncus malesuada. Pellentesque urna neque, finibus eget laoreet sit amet, cursus in tellus.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Pellentesque in odio orci. Quisque eget lacus ornare, pulvinar augue vulputate, feugiat diam. Donec vehicula leo quis ipsum iaculis venenatis. Quisque ultrices, sem eget pulvinar varius, felis sem cursus sem, eu aliquam dui turpis vel arcu. Fusce fermentum volutpat elit id iaculis. Nam luctus sollicitudin quam ac egestas. Donec laoreet leo in magna faucibus, id posuere est consectetur. Suspendisse convallis neque quis blandit convallis. Nullam in sem finibus, egestas ligula sed, imperdiet tortor. Nulla facilisi. Cras vehicula placerat quam, sed suscipit eros auctor at. Nam tristique orci nulla, et ultricies diam elementum quis. Nam efficitur sodales faucibus.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Donec pulvinar condimentum aliquam. Aliquam libero justo, scelerisque eget turpis tincidunt, euismod sodales dui. Quisque semper ipsum vel odio ultrices, et egestas arcu luctus. Cras rhoncus magna eu cursus facilisis. Maecenas at diam ac sapien congue condimentum. Donec sollicitudin suscipit rutrum. Ut at ex risus. Suspendisse facilisis, purus nec laoreet vehicula, orci sem viverra tellus, ac pretium quam ipsum ac libero. Sed accumsan odio et massa luctus malesuada. Aliquam erat volutpat. Ut eleifend, ex non tristique sagittis, tellus magna gravida turpis, venenatis finibus urna arcu ut sapien. Praesent molestie lacinia augue, nec hendrerit leo placerat in. Praesent consequat pellentesque scelerisque. Aenean quis pharetra libero. Sed eget purus semper, vestibulum est ut, interdum enim. Fusce lobortis luctus nisi, ac dictum tellus vulputate quis.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Praesent pharetra laoreet ante. Fusce facilisis justo quis fermentum congue. Sed a arcu eu justo auctor euismod. Sed cursus placerat nulla, sed scelerisque arcu auctor et. Maecenas fermentum enim sed risus accumsan, non tempus diam tempus. Nam et turpis ornare, volutpat leo id, euismod risus. Duis malesuada imperdiet augue rhoncus pretium. Pellentesque at justo nibh. Mauris sagittis finibus turpis, quis lobortis elit commodo ut. Sed mollis tortor a urna dictum dictum. Aenean quis nisi id quam scelerisque sollicitudin quis nec orci. Sed nec tortor mauris.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae est est. Proin nec risus ornare, sagittis nisl sed, pellentesque justo. Aliquam pellentesque hendrerit sapien, eget lacinia tortor lobortis a. Quisque vestibulum nisl a suscipit egestas. Duis sit amet dolor nisl. Morbi mollis nisi eu lectus pellentesque maximus. Donec ante diam, aliquam tincidunt neque a, pretium porttitor massa.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Nam sodales mi sed leo tincidunt convallis et sed erat. Sed pretium ligula sit amet porta accumsan. Curabitur at nisl at tortor dictum gravida. Proin feugiat, odio sit amet commodo gravida, ligula nulla sodales nibh, id iaculis sem magna id nisi. Morbi efficitur mauris eu eros ullamcorper sollicitudin. Pellentesque nec nulla ornare quam bibendum cursus non non felis. In vitae elit sit amet orci condimentum fermentum. Mauris elementum id lectus sed placerat. Fusce eros felis, dapibus blandit libero a, varius luctus nisl. Nulla sit amet fringilla metus, at imperdiet ligula. Nulla sit amet justo congue mi pellentesque laoreet. Donec aliquet risus quis dui feugiat, vel bibendum dui egestas. Fusce placerat mauris vel turpis rhoncus malesuada. Pellentesque urna neque, finibus eget laoreet sit amet, cursus in tellus.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="chapter-header chapter-2">
-                    <div class="texture"></div>
-                    <div class="title">Chapter 2</div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Pellentesque in odio orci. Quisque eget lacus ornare, pulvinar augue vulputate, feugiat diam. Donec vehicula leo quis ipsum iaculis venenatis. Quisque ultrices, sem eget pulvinar varius, felis sem cursus sem, eu aliquam dui turpis vel arcu. Fusce fermentum volutpat elit id iaculis. Nam luctus sollicitudin quam ac egestas. Donec laoreet leo in magna faucibus, id posuere est consectetur. Suspendisse convallis neque quis blandit convallis. Nullam in sem finibus, egestas ligula sed, imperdiet tortor. Nulla facilisi. Cras vehicula placerat quam, sed suscipit eros auctor at. Nam tristique orci nulla, et ultricies diam elementum quis. Nam efficitur sodales faucibus.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Donec pulvinar condimentum aliquam. Aliquam libero justo, scelerisque eget turpis tincidunt, euismod sodales dui. Quisque semper ipsum vel odio ultrices, et egestas arcu luctus. Cras rhoncus magna eu cursus facilisis. Maecenas at diam ac sapien congue condimentum. Donec sollicitudin suscipit rutrum. Ut at ex risus. Suspendisse facilisis, purus nec laoreet vehicula, orci sem viverra tellus, ac pretium quam ipsum ac libero. Sed accumsan odio et massa luctus malesuada. Aliquam erat volutpat. Ut eleifend, ex non tristique sagittis, tellus magna gravida turpis, venenatis finibus urna arcu ut sapien. Praesent molestie lacinia augue, nec hendrerit leo placerat in. Praesent consequat pellentesque scelerisque. Aenean quis pharetra libero. Sed eget purus semper, vestibulum est ut, interdum enim. Fusce lobortis luctus nisi, ac dictum tellus vulputate quis.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Praesent pharetra laoreet ante. Fusce facilisis justo quis fermentum congue. Sed a arcu eu justo auctor euismod. Sed cursus placerat nulla, sed scelerisque arcu auctor et. Maecenas fermentum enim sed risus accumsan, non tempus diam tempus. Nam et turpis ornare, volutpat leo id, euismod risus. Duis malesuada imperdiet augue rhoncus pretium. Pellentesque at justo nibh. Mauris sagittis finibus turpis, quis lobortis elit commodo ut. Sed mollis tortor a urna dictum dictum. Aenean quis nisi id quam scelerisque sollicitudin quis nec orci. Sed nec tortor mauris.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae est est. Proin nec risus ornare, sagittis nisl sed, pellentesque justo. Aliquam pellentesque hendrerit sapien, eget lacinia tortor lobortis a. Quisque vestibulum nisl a suscipit egestas. Duis sit amet dolor nisl. Morbi mollis nisi eu lectus pellentesque maximus. Donec ante diam, aliquam tincidunt neque a, pretium porttitor massa.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Nam sodales mi sed leo tincidunt convallis et sed erat. Sed pretium ligula sit amet porta accumsan. Curabitur at nisl at tortor dictum gravida. Proin feugiat, odio sit amet commodo gravida, ligula nulla sodales nibh, id iaculis sem magna id nisi. Morbi efficitur mauris eu eros ullamcorper sollicitudin. Pellentesque nec nulla ornare quam bibendum cursus non non felis. In vitae elit sit amet orci condimentum fermentum. Mauris elementum id lectus sed placerat. Fusce eros felis, dapibus blandit libero a, varius luctus nisl. Nulla sit amet fringilla metus, at imperdiet ligula. Nulla sit amet justo congue mi pellentesque laoreet. Donec aliquet risus quis dui feugiat, vel bibendum dui egestas. Fusce placerat mauris vel turpis rhoncus malesuada. Pellentesque urna neque, finibus eget laoreet sit amet, cursus in tellus.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Pellentesque in odio orci. Quisque eget lacus ornare, pulvinar augue vulputate, feugiat diam. Donec vehicula leo quis ipsum iaculis venenatis. Quisque ultrices, sem eget pulvinar varius, felis sem cursus sem, eu aliquam dui turpis vel arcu. Fusce fermentum volutpat elit id iaculis. Nam luctus sollicitudin quam ac egestas. Donec laoreet leo in magna faucibus, id posuere est consectetur. Suspendisse convallis neque quis blandit convallis. Nullam in sem finibus, egestas ligula sed, imperdiet tortor. Nulla facilisi. Cras vehicula placerat quam, sed suscipit eros auctor at. Nam tristique orci nulla, et ultricies diam elementum quis. Nam efficitur sodales faucibus.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Donec pulvinar condimentum aliquam. Aliquam libero justo, scelerisque eget turpis tincidunt, euismod sodales dui. Quisque semper ipsum vel odio ultrices, et egestas arcu luctus. Cras rhoncus magna eu cursus facilisis. Maecenas at diam ac sapien congue condimentum. Donec sollicitudin suscipit rutrum. Ut at ex risus. Suspendisse facilisis, purus nec laoreet vehicula, orci sem viverra tellus, ac pretium quam ipsum ac libero. Sed accumsan odio et massa luctus malesuada. Aliquam erat volutpat. Ut eleifend, ex non tristique sagittis, tellus magna gravida turpis, venenatis finibus urna arcu ut sapien. Praesent molestie lacinia augue, nec hendrerit leo placerat in. Praesent consequat pellentesque scelerisque. Aenean quis pharetra libero. Sed eget purus semper, vestibulum est ut, interdum enim. Fusce lobortis luctus nisi, ac dictum tellus vulputate quis.</p>
-                <div class="cb"></div>
-                </div>
-                <div class="character-section">
-                <div class="actor">
-                    <img src="img/luiz-guzman.png" alt="Luiz Guzman as Maurice TT Rodriguez" />
-                    <h3>Luiz Guzman</h3>
-                    <div class="character">Maurice TT Rodriguez</div>
-                </div>
-                <p>Praesent pharetra laoreet ante. Fusce facilisis justo quis fermentum congue. Sed a arcu eu justo auctor euismod. Sed cursus placerat nulla, sed scelerisque arcu auctor et. Maecenas fermentum enim sed risus accumsan, non tempus diam tempus. Nam et turpis ornare, volutpat leo id, euismod risus. Duis malesuada imperdiet augue rhoncus pretium. Pellentesque at justo nibh. Mauris sagittis finibus turpis, quis lobortis elit commodo ut. Sed mollis tortor a urna dictum dictum. Aenean quis nisi id quam scelerisque sollicitudin quis nec orci. Sed nec tortor mauris.</p>
-                <div class="cb"></div>
-                </div>
             </div>
             <ol id="footnotes">
-                <li data-footnote-index="1">This is a big ole test of the footnote.</li>
-                <li data-footnote-index="2">2! This is a big ole test of the footnote.</li>
+                <?php  
+                    foreach($footnotes as $key=>$footnote){
+                        $footnote_index = $key+1;
+                        echo '<li data-footnote-index="'.$footnote_index.'">'.$footnote.'</li>';
+                    }
+                ?>
             </ol>
-            <div class="footnote-box" style="left: 573px; top: 7542px; width: 300px; display: block;"><a href="#" class="footnote-close">x</a><span></span></div>
+            <div class="footnote-box"><a href="#" class="footnote-close">x</a><span></span></div>
         </div>
 
         <!-- Begin Footer -->
@@ -264,10 +214,11 @@
                 <p>Powered by <a href="http://vip.wordpress.com/" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a></p>
             </div>  
         </footer>
-
         <!-- End Footer -->
 
         <!-- Link to any custom JS here -->
+        <script type='text/javascript' src='js/easing.js'></script>
+        <script type='text/javascript' src='js/jquery.transit.js'></script>
         <script type='text/javascript' src='js/onscreen.js'></script>
         <script type='text/javascript' src='js/main.js'></script>
     </body>

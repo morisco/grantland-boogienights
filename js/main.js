@@ -5,12 +5,34 @@
   });
 
   $(document).ready(function(){
-    $(window).on('scroll',watchScroll);
+
+    if (!$.support.transition){
+      $.fn.transition = $.fn.animate;
+      window.easingInOut = 'easeInOutQuad';
+      window.easeOut = 'easeOutQuad';
+    } else{
+      window.easingInOut = 'in-out';
+      window.easeOut = 'ease';
+    }
+
+
+    $('.chapter-header').each(function(){
+      var targetElement = $(this);
+      $(window).on('scroll',function(){
+        watchScroll(targetElement);
+      });
+    });
+
+    $(window).on('scroll',function(){
+      if($(window).scrollTop() > $('.opening-story').height()){
+        $('#opener').addClass('end');
+      }
+    });
 
     $('.footnote-link').on('click',function(event){
       event.preventDefault();
       var footnote_id = $(this).attr('data-footnote-id');
-      var footnote_text = $('#footnotes li[data-footnote-index="'+footnote_id+'"]').text();
+      var footnote_text = $('#footnotes li[data-footnote-index="'+footnote_id+'"]').html();
       var offset_x = parseInt($(this).offset().left) - 150;
       var offset_y = parseInt($(this).offset().top)  + 30;
       $('.footnote-open').removeClass('footnote-open');
@@ -32,13 +54,11 @@
       });
     });
 
-    $('.open-trigger').onScreen({
-      doIn:function(){
-        var openIndex = $(this).attr('data-trigger-index');
-        $('#opener .triggered').removeClass('triggered');
-        $('#opener .opener-' + openIndex).addClass('triggered');
-      }
+    $('.open-trigger').each(function(){
+      var targetElement = $(this);
+      watchOpener(targetElement);
     });
+
     $('#character-wrap').onScreen({
        direction: 'vertical',
        doIn: function() {
@@ -56,27 +76,22 @@
         // $('#trigger-character').removeAttr('style');
       }
     })
-    $('#full-story').onScreen({
-      direction: 'vertical',
-      doOut: function(){
-      }
-    })
 
-    $('.trigger-box .trigger').onScreen({
-        direction: 'vertical',
-       doIn: function() {
-        // $('#character-chart').addClass('tabbed');
-       }
-    })
-
-     $('.trigger-pixel').onScreen({
+    $('.trigger-pixel').onScreen({
        direction: 'vertical',
        doIn: function() {
         $('#opener').removeClass('end');
        }
-     });
+    });
 
-     $('#trigger-character').on('click',function(){
+    $('.scroll-arrow').on('click',function(){
+      var newPosition = $('.opening-story p').first().offset().top - 70;
+      $('html,body').animate({scrollTop: newPosition},1000, 'easeInOutExpo');
+    }); 
+    pulseArrow();
+
+
+    $('#trigger-character').on('click',function(){
       if($('#character-chart').hasClass('open')){
         $(this).removeAttr('style');
         $('#character-chart.tabbed').css('left','-100%');
@@ -88,34 +103,70 @@
         $(this).css('right',0);
         $('#character-chart.tabbed').css('left','0');
       }
-     });
+    });
 
-     $('#full-story .character-section .actor').on('mouseover',function(){
-      $(this).find('img').stop().animate({'opacity':1},500);
-      $(this).find('.character').stop().animate({'opacity':1},500);
-     });
-
-     $('#full-story .character-section .actor').on('mouseout',function(){
-      $(this).find('img').stop().animate({'opacity':0},500);
-      $(this).find('.character').stop().animate({'opacity':0},500);
-     });
+    $('#full-story .character-section .actor').hover(
+      function(){
+        $(this).find('img').transition({'opacity':1, delay: 0},250);
+        $(this).find('.character').transition({'opacity':1, delay: 0},250);
+      },
+      function(){
+        $(this).find('img').animate({'opacity':0, delay: 0},250);
+        $(this).find('.character').animate({'opacity':0, delay: 0},250);
+      }
+     );
   });
 
-  function watchScroll(){
+  function pulseArrow(){
+    $('.scroll-arrow').transition({'opacity':0.7, y: '-5'},750).transition({'opacity':1, y: '0'},750,function(){
+      pulseArrow();
+    });
+  }
+
+  function watchOpener(element){
+    $(element).onScreen({
+       direction: 'vertical',
+       doIn: function() {
+        var targetElement = $('.opener-'+$(this).attr('data-trigger-index'));
+        $('.opener-'+($(this).attr('data-trigger-index')+2)).css('opacity',0);
+        $('.opener-'+($(this).attr('data-trigger-index')-2)).css('opacity',0);
+        window.lastIn = targetElement;
+        $('.triggered').removeClass("triggered").transition({'opacity': 0});
+        targetElement.addClass("triggered").transition({'opacity': 1});
+      }
+    });
+  }
+
+  function watchScroll(element){
     var currentPosition = $(window).scrollTop();
-    window.header1 = parseInt($('.chapter-1').offset().top);
-    window.header2 = parseInt($('.chapter-2').offset().top);
-    if( currentPosition > (header1 - 175) ){
-      $('.chapter-1').addClass('on');
+    var headerPosition = parseInt(element.offset().top);
+    var backgroundPosition = element.attr('data-background-position');
+    var offsetTitle = (150 - element.find('.title').height())/2 + 15;
+    if(currentPosition > headerPosition - 225){
+       if( !element.hasClass('on') ){
+          element.addClass('on');
+          element.transition({'height':'150px'}, 1000, easingInOut);
+          element.find('img').transition({y: backgroundPosition},1000);
+          element.find('.texture').transition({'opacity': '0.5'},1000);
+          element.find('.title').transition({'opacity': '1', y: offsetTitle},1000);
+        }
     } else{
-      $('.chapter-1').removeClass('on');
+      if(element.hasClass('on')){
+        var oldHeight = element.width() * 0.54;
+        element.removeClass('on');
+        element.transition({'height': oldHeight}, 1000, easingInOut);
+        element.find('img').transition({y: 0},1000);
+        element.find('.texture').transition({'opacity': '0'},1000)
+        element.find('.title').transition({'opacity': '0', y: '0px'},1000)
+      }
     }
 
-    if( currentPosition > (header2 - 175) ){
-      $('.chapter-2').addClass('on');
+    if(currentPosition > $('#opener').height()){
+      // $('#opener').addClass('end');
     } else{
-      $('.chapter-2').removeClass('on');
+      $('#opener').removeClass('end');
     }
+
   }
 
 }(jQuery));
