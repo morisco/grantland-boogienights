@@ -49,9 +49,15 @@ if ( $_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'boogie'
                     $character['name'] = $character['name'] . ' ' . $quote['name-note'];
                 }
 
-                echo    '<div class="character-section '.$quote['first_class'].'">'.
-                            '<div class="actor">'.
-                                '<img src="img/characters/'.$quote['name'].'.png" alt="'.$character_name.' as '.$character['role'].'" />'.
+        
+                echo    '<div class="character-section '.$quote['first_class'].'">';
+                
+                if(isset($quote['instructions'])){
+                    echo '<div class="instructions">Roll over for more info <img src="img/instruction-arrow.png" /></div>';
+                }
+
+                echo           '<div class="actor">'.
+                                '<img src="img/characters/'.$quote['name'].'.png" alt="'.$character_name.'" />'.
                                 '<div class="actor-text">'.
                                     '<h3>'.$character['name'].'</h3>'.
                                     '<div class="character">'.$character['role'].'</div>'.
@@ -65,7 +71,6 @@ if ( $_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'boogie'
                 if(isset($quote['blockquote'])){
                     echo '<blockquote>'.$quote['blockquote'].'</blockquote>';
                 }
-
 
                 if(isset($quote['pullquote'])){
                     echo '<p class="boogie-pullquote">'.$quote['pullquote'].'</p>';
@@ -99,9 +104,10 @@ if ( $_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'boogie'
                     
                     <div class="hed">
                         <div class="hed-wrap">
-                            <h1>Livin&#8217; Thing:</h1>
+                            <h1>Livi<span style="letter-spacing:-10px;">n</span>&#8217; Thing:</h1>
                             <h2>An Oral History <br/>of ‘Boogie Nights’</h2>
                             <div class="open-trigger first" data-trigger-index="1"></div>
+                            <img src="img/mobile-lead.png" class="mobile-lead" />
                             <h4><strong>by alex french and howie kahn</strong><br/>illustrations by berto martinez</h4>
                             <div class="scroll-arrow"></div>
                         </div>
@@ -147,6 +153,7 @@ if ( $_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'boogie'
                      <div class="cb"></div>
                     </div>
                 </div>
+                <div class="character-title no-sqwiggle">...AMONG OTHERS</div>
             </div>
             <div id="full-story">
                 <?php 
@@ -159,9 +166,6 @@ if ( $_SERVER['PHP_AUTH_USER'] == 'admin' && $_SERVER['PHP_AUTH_PW'] == 'boogie'
                                 '<div class="title"><div class="number">Chapter '.$chapter['number'].'</div><div class="title-words">'.$chapter['title'].'</div></div>'.
                              '</div>';
 
-                        if($key == '1'){
-                            print_r('<div class="instructions">roll over names to see more info &dagger;</div>');
-                        }
                         $story_chapter = 'chapter-'.$key;
                         foreach($story[$story_chapter] as $quote){
                             if(!in_array($quote['name'],$first_mentions)){

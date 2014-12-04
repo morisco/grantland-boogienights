@@ -5,7 +5,7 @@ $displayCharacters = array('paul-thomas-anderson', 'mark-wahlberg', 'philip-seym
 $characters = array(
   'todd-williams' => array(
     'name' => 'Todd Williams',
-    'role' => 'Production Assistant, Boogie Nights'
+    'role' => 'Production Assistant, <span style="font-style:normal;">Boogie Nights</span>'
   ),
 
   'robert-shaye' => array(
@@ -40,7 +40,7 @@ $characters = array(
 
   'sharon-waxman' => array(
     'name' => 'Sharon Waxman',
-    'role' => 'Author, Rebels on the Backlot'
+    'role' => 'Author, <span style="font-style:normal;">Rebels on the Backlot</span>'
   ),
 
   'michael-de-luca' => array(
@@ -60,22 +60,22 @@ $characters = array(
 
   'michael-stein' => array(
     'name' => 'Michael Stein',
-    'role' => 'Dirk Diggler, The Dirk Diggler Story'
+    'role' => 'Dirk Diggler, <span style="font-style:normal;">The Dirk Diggler Story</span>'
   ),
 
   'rusty-schwimmer' => array(
     'name' => 'Rusty Schwimmer',
-    'role' => 'Candy Kane, The Dirk Diggler Story'
+    'role' => 'Candy Kane, <span style="font-style:normal;">The Dirk Diggler Story</span>'
   ),
 
   'ernie-anderson' => array(
     'name' => 'Ernie Anderson',
-    'role' => 'Narrator, The Dirk Diggler Story'
+    'role' => 'Narrator, <span style="font-style:normal;">The Dirk Diggler Story</span>'
   ),
 
   'eddie-dalcour' => array(
     'name' => 'Eddie Dalcour',
-    'role' => 'Reed Rothchild, The Dirk Diggler Story'
+    'role' => 'Reed Rothchild, <span style="font-style:normal;">The Dirk Diggler Story</span>'
   ),
 
   'christine-sheaks' => array(
@@ -180,7 +180,7 @@ $characters = array(
 
   'chuck-stevens' => array(
     'name' => 'Chuck Stevens',
-    'role' => 'Contributor, Film Comment; Author of Boogie Nights DVD Liner Notes'
+    'role' => 'Contributor, Film Comment; Author of <span style="font-style:normal;">Boogie Nights DVD Liner Notes</span>'
   ),
 
   'adam-druxman' => array(
@@ -191,11 +191,6 @@ $characters = array(
   'mark bridges' => array(
     'name' => 'Mark Bridges',
     'role' => 'Costume Designer'
-  ),
-
-  'todd-williams' => array(
-    'name' => 'Todd Williams',
-    'role' => 'Production Assistant'
   ),
 
   'jack-wallace' => array(
@@ -210,7 +205,7 @@ $characters = array(
 
   'david-ansen' => array(
     'name' => 'David Ansen',
-    'role' => 'Film Critic, Newsweek'
+    'role' => 'Film Critic, <span style="font-style:normal;">Newsweek</span>'
   ),
 
   'joanne-sellar' => array(
@@ -292,7 +287,8 @@ $story = array(
     ),
     array(
       'name' => 'todd-williams',
-      'quote' => 'Paul knew how to write to an audience who reads scripts. You have the title page, then you open up to the second page and it\'s like, "This movie will be shot with anamorphic lenses."'
+      'quote' => 'Paul knew how to write to an audience who reads scripts. You have the title page, then you open up to the second page and it\'s like, "This movie will be shot with anamorphic lenses."',
+      'instructions' => true
     ),
     array(
       'name' => 'paul-thomas-anderson',
@@ -340,7 +336,9 @@ $story = array(
     ),
     array(
       'name' => 'michael-lynne',
-      'quote' => 'So Bob and I got to Sundance. The evening we arrived, we were meeting some people at a restaurant and a young guy introduces himself to us as Paul Thomas Anderson. He\'s holding the largest script I ever saw in my life. It looked like a telephone book.'
+      'quote' => 'So Bob and I got to Sundance. The evening we arrived, we were meeting some people at a restaurant and a young guy introduces himself to us as Paul Thomas Anderson. He\'s holding the largest script I ever saw in my life. It looked like a telephone book.',
+      'pullquote' => '<span class="hangingquote">&ldquo;</span>It was easier for us to take chances with new people than compete for the already-established top-five directors in town. We tried to zig when the majors zagged.&rdquo; <span class="attribution"> —Michael DeLuca</em></span>'
+
     ),
     array(
       'name' => 'robert-shaye',
@@ -402,8 +400,8 @@ $story = array(
       'name'  => 'michael-stein',
       'quote' => 'It was a very dirty room. There was a lot of film stuff everywhere and two VCRs hooked up to one TV. Paul had this Academy Award poster right in front of his bed. I was like, wow, every night before you go to sleep, you memorize all the Academy Award–winning films.',
       'image' => 'img/chapter-2-inline.jpg',
-      'caption' => 'Paul Thomas Anderson on set with Roller Girl during the pool party scene.',
-      'credit' => 'Photo: Getty Images'
+      'caption' => 'Michael Stein and Rusty Schwimmer in The Dirk Diggler Story',
+      'credit' => 'Photo: YouTube'
     ),
     array(
       'name'  => 'rusty-schwimmer',
@@ -444,7 +442,8 @@ $story = array(
     ),
     array(
       'name'  => 'michael-stein',
-      'quote' => 'We were on an eight-hour shoot and ordered a pizza. A delivery guy comes there, and it looks like we\'re shooting porn.'
+      'quote' => 'We were on an eight-hour shoot and ordered a pizza. A delivery guy comes there, and it looks like we\'re shooting porn.',
+      'pullquote' => '<span class="hangingquote">&ldquo;</span>It\'s inconsistent to be in <em>Boogie Nights</em> and a full-time Christian ministry.&rdquo; <span class="attribution"> —Eddie Dalcour</span>'
     ),
     array(
       'name'  => 'rusty-schwimmer',
@@ -452,8 +451,7 @@ $story = array(
     ),
     array(
       'name'  => 'eddie-dalcour',
-      'quote' => 'I didn’t even realize Bob was an actor. I thought he was just one of Paul\'s dad\'s friends. <a class="footnote-link" data-footnote-id="9" href="#fn-9"><sup id="ss-9">9</sup></a>',
-      'pullquote' => '<span class="hangingquote">&ldquo;</span>He was born Steven Samuel Adams, on April 15, 1961. His father was a construction worker.&rdquo; <span class="attribution"> —Ernie Anderson, narrator, <em>The Dirk Diggler Story</em></span>'
+      'quote' => 'I didn’t even realize Bob was an actor. I thought he was just one of Paul\'s dad\'s friends. <a class="footnote-link" data-footnote-id="9" href="#fn-9"><sup id="ss-9">9</sup></a>'  
     ),
     array(
       'name'  => 'rusty-schwimmer',
@@ -469,7 +467,7 @@ $story = array(
     ),
     array(
       'name'  => 'eddie-dalcour',
-      'quote' => 'For the hot-tub scene, I turned to Mike and I said, “Hey, I wrote a poem.” I improvised a lot. It cracked Paul up. You can hear him laughing in the background all through the movie. John Reilly does the same poem in <em>Boogie Nights.</em> Paul asked me to be in <em>Boogie Nights</em>, too, but by then I was doing a full-time Christian ministry called the Power Team, doing things like breaking bricks and tearing phone books in half. <strong>It’s inconsistent to be in <em>Boogie Nights</em> and a full-time Christian ministry.</strong>'
+      'quote' => 'For the hot-tub scene, I turned to Mike and I said, “Hey, I wrote a poem.” I improvised a lot. It cracked Paul up. You can hear him laughing in the background all through the movie. John Reilly does the same poem in <em>Boogie Nights.</em> Paul asked me to be in <em>Boogie Nights</em>, too, but by then I was doing a full-time Christian ministry called the Power Team, doing things like breaking bricks and tearing phone books in half. It’s inconsistent to be in <em>Boogie Nights</em> and a full-time Christian ministry.'
     ),
     array(
       'name'  => 'rusty-schwimmer',
@@ -516,7 +514,10 @@ $story = array(
     ),
     array(
       'name'  => 'paul-thomas-anderson',
-      'quote' => 'When I first met Mark I sat down with him. I was excited to meet him because I’d seen <em>Basketball Diaries</em>. "Let’s hope he’s a good guy because I know he’s a good actor and can do this part." And he’d only read thirty pages of the script. I thought what the fuck is this. Who is this jackass? "Why have you only read thirty pages?" <a class="footnote-link" data-footnote-id="12 " href="#fn-12"><sup id="ss-12">12</sup></a>'
+      'quote' => 'When I first met Mark I sat down with him. I was excited to meet him because I’d seen <em>Basketball Diaries</em>. "Let’s hope he’s a good guy because I know he’s a good actor and can do this part." And he’d only read thirty pages of the script. I thought what the fuck is this. Who is this jackass? "Why have you only read thirty pages?" <a class="footnote-link" data-footnote-id="12" href="#fn-12"><sup id="ss-12">12</sup></a>',
+      'image' => 'img/chapter-3-inline.jpg',
+      'caption' => 'Mark Wahlberg and Leonardo DiCaprio in 1995.',
+      'credit' => 'Photo: Getty Images'
     ),
     array(
       'name'  => 'mark-wahlberg',
@@ -582,13 +583,10 @@ $story = array(
       'name'  => 'thomas-jane',
       'quote' => 'When I auditioned for the part, they brought in Philip Seymour Hoffman and John C. Reilly. We would do these scenes where we would just start riffing, acting like we’d been on coke for 48 hours straight. Philip was great at improv, John Reilly is a great improv guy, and I just kind of slipped right into it. We all kind of clicked.'
     ),
-    array(
-      'name'  => 'thomas-jane',
-      'quote' => 'When I auditioned for the part, they brought in Philip Seymour Hoffman and John C. Reilly. We would do these scenes where we would just start riffing, acting like we’d been on coke for 48 hours straight. Philip was great at improv, John Reilly is a great improv guy, and I just kind of slipped right into it. We all kind of clicked.'
-    ),
+    
     array(
       'name'  => 'adam-shankman',
-      'quote' => 'When I auditioned for the part, they brought in Philip Seymour Hoffman and John C. Reilly. We would do these scenes where we would just start riffing, acting like we’d been on coke for 48 hours straight. Philip was great at improv, John Reilly is a great improv guy, and I just kind of slipped right into it. We all kind of clicked.'
+      'quote' => 'I had known the New Line executives for a long time and they said, "Would you please do us a favor and help us out? It\'s not a big-budget movie." I went to meet with Paul and I was like, "Where is the adult? Where is the person who\'s making the movie? Why am I meeting with you, child?"'
     ),
     array(
       'name'  => 'howard-berger',
@@ -802,7 +800,10 @@ $story = array(
     ),
     array(
       'name'  => 'mark-bridges',
-      'quote' => 'So that\'s how we came up with Philip\'s look, that\'s how I interpreted a 14-year-old boy.  And there\'s such a conflict throughout the whole movie about who he is and what he is — the clothes illustrate that.'
+      'quote' => 'So that\'s how we came up with Philip\'s look, that\'s how I interpreted a 14-year-old boy.  And there\'s such a conflict throughout the whole movie about who he is and what he is — the clothes illustrate that.',
+      'image' => 'img/chapter-4-inline.jpg',
+      'caption' => 'Philip Seymour Hoffman as Scotty J.',
+      'credit' => 'Photo: Kobal Collection'
     ),
     array(
       'name'  => 'philip-seymour-hoffman',
@@ -884,7 +885,8 @@ $story = array(
     ),
     array(
       'name'  => 'adam-druxman',
-      'quote' => 'I think we only got seven takes of it.'
+      'quote' => 'I think we only got seven takes of it.',
+      'pullquote' => '<span class="hangingquote">&ldquo;</span>I think Burt Reynolds was like, &lsquo;What the fuck are these people doing?&rsquo; &rdquo; <span class="attribution"> —Luis Guzman</em></span>'
     ),
     array(
       'name'  => 'robert-elswit',
@@ -970,7 +972,10 @@ $story = array(
     ),
     array(
       'name'  => 'john-wildermuth',
-      'quote' => 'Burt got so frustrated he pulled Paul outside into the backyard and started yelling at him, like a father, you know? “You fuckin’ little punk kid, don\'t tell me what to do. You let all the other actors do free takes and you\'re not letting me do any.” He read him the riot act. Paul stood there and took it in and then argued back with him. And then when they walked back into the house, Paul had his sly little smirk on his face.'
+      'quote' => 'Burt got so frustrated he pulled Paul outside into the backyard and started yelling at him, like a father, you know? “You fuckin’ little punk kid, don\'t tell me what to do. You let all the other actors do free takes and you\'re not letting me do any.” He read him the riot act. Paul stood there and took it in and then argued back with him. And then when they walked back into the house, Paul had his sly little smirk on his face.',
+      'image' => 'img/chapter-6-inline.jpg',
+      'caption' => 'Paul Thomas Anderson and Burt Reynolds on set during a calmer moment.',
+      'credit' => 'Photo: Getty Images'
     ),    
     array(
       'name'  => 'tom-lenk',
@@ -1088,7 +1093,9 @@ $story = array(
     ),
     array(
       'name'  => 'ted-berner',
-      'quote' => 'Nina was quite a character. She didn\'t have any inhibitions.'
+      'quote' => 'Nina was quite a character. She didn\'t have any inhibitions.',
+      'pullquote' => '<span class="hangingquote">&ldquo;</span>He knew that as an adult performer, nudity is my uniform, and so he wouldn&rsquo;t have to coddle me.&rdquo; <span class="attribution"> —Nina Hartley</em></span>'
+
     ),
     array(
       'name'  => 'bill-holmquist',
@@ -1178,7 +1185,9 @@ $story = array(
     ),
     array(
       'name'  => 'dylan-tichenor',
-      'quote' => 'Paul does a lot of takes when he needs to. That whole firecracker sequence was miles and miles of footage. There were, I don\'t know, a hundred camera setups.'
+      'quote' => 'Paul does a lot of takes when he needs to. That whole firecracker sequence was miles and miles of footage. There were, I don\'t know, a hundred camera setups.',
+      'pullquote' => '<span class="hangingquote">&ldquo;</span>Alfred Molina&rsquo;s house with the kid with the firecrackers. That&rsquo;s the most tense scene I&rsquo;ve ever witnessed, and it goes on forever.&rdquo; <span class="attribution"> —William H. Macy</em></span>'
+
     ),
     array(
       'name'  => 'thomas-jane',
@@ -1281,7 +1290,9 @@ $story = array(
     ),
     array(
       'name'  => 'dylan-tichenor',
-      'quote' => 'It was the size of John Holmes\'s penis, but Mark is like eight or nine inches shorter than John Holmes. It was more than one-sixth of his body.'
+      'quote' => 'It was the size of John Holmes\'s penis, but Mark is like eight or nine inches shorter than John Holmes. It was more than one-sixth of his body.',
+      'pullquote' => '<span class="hangingquote">&ldquo;</span>When that movie came out, and years and years afterward, we were known as &lsquo;those are the guys who made the dick in Boogie Nights.&rsquo; &rdquo; <span class="attribution"> —Howard Berger</em></span>'
+
     ),
     array(
       'name'  => 'john-wildermuth',
@@ -1572,7 +1583,7 @@ $story = array(
     ),        
     array(
       'name'  => 'phillip-baker-hall',      
-      'quote' => '<em>Boogie Nights </em>became a sacred text. I\'ll tell you one thing about a Paul Thomas Anderson movie, the larger meaning of the movie is not really apparent until you see it in the theater. It was devastating when I finally saw the whole thing. It\'s a fascinating, poetic force. I remember doing one scene with him and I was down near the floor and Paul came down there and laid next to me. And he\'s looking at me and I remember I said, "What are you doing?" He was like a foot away from me. He was looking me right in the eye. I said, "What are you doing?" He said, "I\'m looking for the truth.”'
+      'quote' => '<em>Boogie Nights </em>became a sacred text. I\'ll tell you one thing about a Paul Thomas Anderson movie, the larger meaning of the movie is not really apparent until you see it in the theater. It was devastating when I finally saw the whole thing. It\'s a fascinating, poetic force. I remember doing one scene with him and I was down near the floor and Paul came down there and laid next to me. And he\'s looking at me and I remember I said, "What are you doing?" He was like a foot away from me. He was looking me right in the eye. I said, "What are you doing?" He said, "I\'m looking for the truth.” <span class="grantland-g"></span>'
     )
   )
 ); 

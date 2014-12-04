@@ -178,6 +178,10 @@ p{
   -webkit-transform:translateY(-48%); -ms-transform:translateY(-48%); transform:translateY(-48%);
 }
 
+.opening-story .hed .hed-wrap .mobile-lead{
+  display:none;
+}
+
 .opening-story .hed .scroll-arrow{
   height:25px;
   width:20px;
@@ -277,7 +281,7 @@ p{
   position:relative;
   width:90%;
   max-width:1070px;
-  margin:50px auto 50px;
+  margin:50px auto 0px;
   text-align:center;
 }
 
@@ -287,10 +291,15 @@ p{
   max-width:1024px;
   padding:0 25px 30px;
   margin:45px auto 0px;
-  font-size:18px;
+  font-size:14px;
+  letter-spacing:2px;
   font-family:'Harriet Text';
   color:#fff;
   background:url(../img/double-sqwiggle.png) repeat-x center bottom;
+}
+#character-wrap .character-title.no-sqwiggle{
+  background:transparent;
+  margin-top:0px;
 }
 
 #character-chart .characters .character{
@@ -324,7 +333,7 @@ p{
   font-family:'baltobold';
 }
 
-.firstcharacter { float: left;  font-size: 80px; line-height: 40px; padding-top: 15px; padding-right: 10px; padding-left: 3px; }
+.firstcharacter { float: left;  font-size: 80px; line-height: 40px; padding-top: 15px; padding-right: 3px; padding-left: 0px; }
 
 #full-story{
   width:100%; 
@@ -353,14 +362,16 @@ p{
 }
 
 #full-story .instructions{
+  position:absolute;
+  top:17px;
+  left:-110px;
   max-width: 1024px;
   margin: 0 auto;
-  padding-left: 50px;
-  margin-bottom:20px;
   font-family:'baltobold';
-  font-size: 12px;
-  color:#696969;
+  font-size: 10px;
+  color:#ff5800;
   text-transform:uppercase;
+  letter-spacing: 1px;
 }
 
 #full-story .character-section{
@@ -409,6 +420,7 @@ p{
   font-size:12px;
   font-family:'Harriet Text';
   font-style:italic;
+  line-height:17px;
   transition: all .5s ease-in-out;
 }
 
@@ -435,12 +447,13 @@ p{
 }
 
 #full-story .character-section blockquote .attribution{
+  display:block;
   margin-top: 15px;
   font-family: 'baltobold';
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
   letter-spacing: 1px;
-  color:#777;
+  color:#000;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -475,10 +488,10 @@ p{
   display:block;
   margin-top: 5px;
   font-family: 'baltobold';
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
   letter-spacing: 1px;
-  color:#777;
+  color:#000;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -585,6 +598,10 @@ h3 .footnote-link sup{
   line-height:1.8;
 }
 
+.footnote-link sup{
+  line-height:1.4;
+}
+
 .footnote-link{
   background-color: #cd251f;
   color: #f8f7f3;
@@ -672,12 +689,13 @@ h3 .footnote-link sup{
   .opening-story p{ font-size:16px; line-height:24px; }
   .opening-story .hed{ height:auto; position:relative; margin-bottom:40px; }
   .opening-story .hed .hed-wrap{ position:relative; margin-top:20px; -webkit-transform:translateY(0); -ms-transform:translateY(0); transform:translateY(0); }
+  .opening-story .hed .hed-wrap .mobile-lead{ display:block; width:110%; max-width:110%; margin-left:-5.5%; margin-bottom:10px; ma }
   .opening-story h1{ font-size:50px; letter-spacing:-1px; line-height:100%; }
-  .opening-story h2{ font-size:40px; margin-bottom:20px; }
+  .opening-story h2{ font-size:40px; margin-bottom:2px; }
   .opening-story h4{ font-size:11px; letter-spacing:2px; margin:0 0 20px;}
   .opening-story h4 strong{ font-size:11px; font-family:'baltobold'; font-weight:normal; letter-spacing:2px; }
   div.scroll-arrow{display:none;}
-  #character-wrap{height:1px;}
+  #character-wrap{height:1px; min-height:0;}
 
   #full-story{ padding:50px 5%; }
   #full-story .chapter-header{height:140px !important; text-align:center; }

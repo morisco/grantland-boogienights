@@ -15,7 +15,6 @@
       window.easeOut = 'ease';
     }
 
-
     $('.chapter-header').each(function(){
       var targetElement = $(this);
       $(window).on('scroll',function(){
@@ -35,6 +34,14 @@
       var footnote_text = $('#footnotes li[data-footnote-index="'+footnote_id+'"]').html();
       var offset_x = parseInt($(this).offset().left) - 150;
       var offset_y = parseInt($(this).offset().top)  + 30;
+      setTimeout(function(){
+        $(document).on('click.close-foot',function(){
+          $('.footnote-close').click();
+        });
+      },500);
+      $('.footnote-box').on('click',function(event){
+        event.stopPropagation();
+      });
       $('.footnote-open').removeClass('footnote-open');
       $(this).addClass('footnote-open');
       $('.footnote-box').css({
@@ -47,6 +54,8 @@
 
     $('.footnote-close').on('click',function(event){
       event.preventDefault();
+      event.stopPropagation();
+      $(document).off('.close-foot');
       $('.footnote-open').removeClass('footnote-open');
       $('.footnote-box').fadeOut(function(){
         $(this).removeAttr('style');
@@ -107,8 +116,11 @@
 
     $('#full-story .character-section .actor').hover(
       function(){
-        $(this).find('img').transition({'opacity':1, delay: 0},250);
-        $(this).find('.character').transition({'opacity':1, delay: 0},250);
+        if(!$(this).closest('.character-section').hasClass('initial')){
+          $('.instructions').transition({'opacity':0, x:'-50px'}, 250);
+          $(this).find('img').transition({'opacity':1, delay: 0},250);
+          $(this).find('.character').transition({'opacity':1, delay: 0},250);
+        }
       },
       function(){
         $(this).find('img').animate({'opacity':0, delay: 0},250);
@@ -142,7 +154,7 @@
     var headerPosition = parseInt(element.offset().top);
     var backgroundPosition = element.attr('data-background-position');
     var offsetTitle = (150 - element.find('.title').height())/2 + 15;
-    if(currentPosition > headerPosition - 225){
+    if(currentPosition > headerPosition - 175){
        if( !element.hasClass('on') ){
           element.addClass('on');
           element.transition({'height':'150px'}, 1000, easingInOut);
