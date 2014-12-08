@@ -1,0 +1,727 @@
+@font-face {
+    font-family: 'Harriet Text';
+    src: url('harriettext-regular-1v6-webfont.eot');
+    src: url('../fonts/harriettext-regular-1v6-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/harriettext-regular-1v6-webfont.woff2') format('woff2'),
+         url('../fonts/harriettext-regular-1v6-webfont.woff') format('woff'),
+         url('../fonts/harriettext-regular-1v6-webfont.ttf') format('truetype'),
+         url('../fonts/harriettext-regular-1v6-webfont.svg#harriet_text_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { 
+  font-family: "Harriet Text Bold"; 
+  src: url("../fonts/04217167-b915-48ed-bbca-74869c5db46f-2.eot"); 
+  src: url("../fonts/04217167-b915-48ed-bbca-74869c5db46f-2.eot?") format("embedded-opentype"), 
+       url("../fonts/04217167-b915-48ed-bbca-74869c5db46f-3.woff") format("woff"), 
+       url("../fonts/04217167-b915-48ed-bbca-74869c5db46f-1.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: bold; 
+}
+
+@font-face {
+    font-family: 'baltomedium';
+    src: url('../fonts/balto-medium-webfont.eot');
+    src: url('../fonts/balto-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/balto-medium-webfont.woff2') format('woff2'),
+         url('../fonts/balto-medium-webfont.woff') format('woff'),
+         url('../fonts/balto-medium-webfont.ttf') format('truetype'),
+         url('../fonts/balto-medium-webfont.svg#baltomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'baltobook';
+    src: url('../fonts/balto-book-webfont.eot');
+    src: url('../fonts/balto-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/balto-book-webfont.woff2') format('woff2'),
+         url('../fonts/balto-book-webfont.woff') format('woff'),
+         url('../fonts/balto-book-webfont.ttf') format('truetype'),
+         url('../fonts/balto-book-webfont.svg#baltomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'baltolight';
+    src: url('../fonts/balto-light-webfont.eot');
+    src: url('../fonts/balto-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/balto-light-webfont.woff2') format('woff2'),
+         url('../fonts/balto-light-webfont.woff') format('woff'),
+         url('../fonts/balto-light-webfont.ttf') format('truetype'),
+         url('../fonts/balto-light-webfont.svg#baltolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'baltobold';
+    src: url('../fonts/balto-bold-webfont.eot');
+    src: url('../fonts/balto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/balto-bold-webfont.woff2') format('woff2'),
+         url('../fonts/balto-bold-webfont.woff') format('woff'),
+         url('../fonts/balto-bold-webfont.ttf') format('truetype'),
+         url('../fonts/balto-bold-webfont.svg#baltomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+  -webkit-font-smoothing: antialiased;
+}
+
+header{ width:100%; position:fixed; background:#000; height:40px; z-index:11; font-family:'baltomedium'; }
+header a.back{ font-size:12px; letter-spacing:1.5px; color:#fff; margin-left:15px; padding:13px 0px; display:inline-block; z-index:1;}
+header a.grantland-logo{ display:block; position: relative; float:left;  padding:12px 15px;  }
+header a.facebook, header a.twitter{ display:block; float:right; margin:8px 10px 0px 0px;  width:20px; height:20px; z-index:1; }
+header a.twitter{ margin-right:15px;  background-image:url(../img/twitter.png); background-position:0px 0px; }
+header a.twitter:hover{ background-position:0px -20px; }
+header a.facebook{   background-image:url(../img/facebook.png); background-position:0px 0px; }
+header a.facebook:hover{ background-position:0px -20px; }
+
+.cb{
+  clear:both;
+}
+
+#open-wrapper{
+  position:relative;
+  background:#ff5800;
+}
+
+body{
+  border:0;
+  
+}
+
+p{
+  position: relative;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Harriet Text", Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+#opener{
+  display:block;
+  height:calc(100vh - 40px); 
+  width:100%; 
+  position:fixed;
+  top:40px;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:10;
+}
+
+
+
+#opener.end{ 
+  position:absolute;
+  top:auto;
+  z-index:10;
+
+}
+
+#opener img{
+  position:absolute;
+  width:38%;
+  bottom:0;
+  left:0;
+  z-index:12;
+}
+
+
+#opener .open-image{
+  opacity:0;
+  transition: all .5s ease-in-out;
+}
+
+#opener img.triggered{
+  opacity:1;
+}
+
+#opener .trigger-pixel{
+  width:1px;
+  height:1px; 
+  position:absolute;
+  top:-40px;
+  left:0;
+}
+
+.opening-story{
+  display:block;
+  height:auto;
+  width:40%;
+  position:relative;
+  margin:40px 10% 150px 0;
+  float:right;
+  z-index:10;
+  color:#000;
+}
+.opening-story a:hover{
+  color:#fff;
+}
+
+.opening-story .hed{
+  position:relative;
+  height:100vh;
+}
+
+.opening-story .hed .hed-wrap{
+  position:absolute;
+  top:50%;
+  -webkit-transform:translateY(-48%); -ms-transform:translateY(-48%); transform:translateY(-48%);
+}
+
+.opening-story .hed .hed-wrap .mobile-lead{
+  display:none;
+}
+
+.opening-story .hed .scroll-arrow{
+  height:25px;
+  width:20px;
+  background:url(../img/scroll-arrow.png) no-repeat center center;
+
+}
+
+.opening-story h1{
+  font-size:90px;
+  color:#000;
+  margin-bottom:3px;
+}
+
+.opening-story h2{
+  font-family:'baltolight';
+  font-weight:lighter;
+  font-size:80px;
+  color:#fff;
+  line-height:1.1em;
+  margin-bottom:15px;
+}
+
+.opening-story h4{
+  font-size:13px;
+  color:#000;
+  margin:0px 0 40px;
+  font-family:'baltolight';
+  font-weight:lighter;
+  font-size:16px;
+  line-height:180%;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.opening-story h4 strong{
+  font-size:16px;
+  font-family:'baltobold';
+  font-weight:normal;
+}
+
+.opening-story p{
+  font-size:20px;
+  line-height:150%;
+}
+
+.opening-story a{
+  text-decoration:underline;
+}
+
+#character-wrap{
+  width:100%;
+  min-height:100vh;
+  z-index:2;
+  background:#222;
+  text-align:center;
+  overflow:hidden;
+}
+
+#trigger-character{
+  position:absolute;
+  width:50px;
+  height:200px;
+  right:-50px;
+  top:50%;
+  margin-top:-100px;
+  background:green;
+  opacity:0;
+  transition: all .5s ease-in-out;
+}
+
+#character-chart{
+  position:relative;
+  width:100%; 
+  height:calc(100% - 100px);
+  overflow:hidden;
+  z-index:5;
+  overflow-x:hidden;
+}
+
+#character-chart.tabbed{
+  position:fixed !important;
+  left:-100%;
+  top:0;
+  overflow-x:visible;
+}
+
+#character-chart.open{
+  transition: all .5s ease-in-out;
+}
+
+
+#character-chart.tabbed #trigger-character{
+  opacity:1;
+}
+
+#character-chart .characters{
+  position:relative;
+  width:90%;
+  max-width:1070px;
+  margin:50px auto 0px;
+  text-align:center;
+}
+
+#character-wrap .character-title{
+  display:block;
+  width:80%;
+  max-width:1024px;
+  padding:0 25px 30px;
+  margin:45px auto 0px;
+  font-size:14px;
+  letter-spacing:2px;
+  font-family:'Harriet Text';
+  color:#fff;
+  background:url(../img/double-sqwiggle.png) repeat-x center bottom;
+}
+#character-wrap .character-title.no-sqwiggle{
+  background:transparent;
+  margin-top:0px;
+}
+
+#character-chart .characters .character{
+  display:inline-block;
+  width:17%;
+  margin:0 1.3% 60px;
+  text-align:center;
+}
+
+#character-chart .characters .character img{
+  display:inline-block;
+  max-width:165px;
+  width:100%;
+}
+
+#character-chart .characters .character .character-info{
+  width:100%;
+  margin-top:15px;
+  font-size:16px;
+  color:#fff;
+  font-family:'Harriet Text';
+}
+
+#character-chart .characters .character .character-info .role{
+  font-style:italic;
+  font-size:14px;
+  margin-top:2px;
+}
+
+#character-chart .characters .character .character-info .actor{
+  font-family:'baltobold';
+}
+
+.firstcharacter { float: left;  font-size: 80px; line-height: 40px; padding-top: 15px; padding-right: 3px; padding-left: 0px; margin-left:-4px; }
+
+#full-story{
+  width:100%; 
+  height:auto;
+  padding: 50px 10%;
+  box-sizing:border-box;
+  font-size:20px;
+  position:relative;
+  z-index:1;
+}
+
+#full-story a{
+  color:#cd251f ;
+}
+
+#full-story .trigger-box{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+}
+
+#full-story .trigger-box .trigger{
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:1px;
+  width:1px;
+}
+
+#full-story .instructions{
+  position:absolute;
+  top:17px;
+  left:-110px;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family:'baltobold';
+  font-size: 10px;
+  color:#ff5800;
+  text-transform:uppercase;
+  letter-spacing: 1px;
+}
+
+#full-story .character-section{
+  position:relative;
+  width:90%; 
+  max-width:1024px;
+  margin:0 auto 10px;
+}
+
+#full-story .character-section .actor{
+  position:absolute;
+  width:35%;
+  top:0;
+  left:0;
+  bottom:0;
+  cursor:default;
+}
+
+#full-story .character-section .actor img{
+  position:relative;
+  width:60px;
+  height:60px;
+  float:left;
+  margin-right:10px;
+  opacity:0;  
+  transition: all .5s ease-in-out;
+}
+
+#full-story .character-section .actor .actor-text{
+  position:relative;   
+  width:calc(100% - 70px);
+  float:left;
+}
+
+#full-story .character-section .actor h3{
+  margin-top:15px;
+  font-family:'baltobold';
+  font-size:15px;
+  font-weight:normal;
+  letter-spacing:1px;
+  -webkit-font-smoothing:subpixel-antialiased;
+}
+
+#full-story .character-section .actor .character{
+  opacity:0;
+  font-size:12px;
+  font-family:'Harriet Text';
+  font-style:italic;
+  line-height:17px;
+  transition: all .5s ease-in-out;
+}
+
+#full-story .character-section.initial .actor img, #full-story .character-section.initial .actor .character{
+  opacity:1 !important;
+}
+
+#full-story .character-section h3{
+  position:relative;
+}
+
+#full-story .character-section p, #full-story .character-section blockquote{
+  position:relative;
+  width:60%;
+  float:right;
+  margin-top:10px;
+}
+
+#full-story .character-section blockquote{
+  font-style:italic;
+  font-size:16px;
+  font-family: "Harriet Text", Georgia, Times, "Times New Roman", serif;
+  line-height:24px;
+}
+
+#full-story .character-section blockquote .attribution{
+  display:block;
+  margin-top: 15px;
+  font-family: 'baltobold';
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color:#000;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#full-story .character-section p.inline-photo{
+  font-size:12px;
+  color:#4f4f4f;
+  line-height:110%;
+}
+
+#full-story .character-section p.inline-photo img{
+  margin-bottom:5px;
+}
+
+#full-story .character-section p.inline-photo .caption{
+  font-family:'baltomedium';
+}
+
+#full-story .character-section p.inline-photo .inline-credit{
+  font-family:'baltobook';
+}
+
+#full-story .character-section p.boogie-pullquote{
+  font-family:'baltolight';
+  font-weight:lighter;
+  font-size:40px;
+  line-height:1.1em;
+  margin:35px 0;
+  color:#000;
+}
+
+#full-story .character-section .boogie-pullquote .attribution{
+  display:block;
+  margin-top: 5px;
+  font-family: 'baltobold';
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color:#000;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#full-story .boogie-pullquote .hangingquote{
+  margin-left:-10px;
+}
+
+
+#full-story .chapter-header{
+  position:relative;
+  width:100%;
+  height:576px;
+  max-width:1024px;
+  margin:0px auto 30px;
+  background-position:center center;
+  background-size:100%;
+  overflow:hidden;
+}
+
+#full-story .chapter-header img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%:;
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  transition: all 1s ease; /* Fade to color for Chrome and Safari */
+}
+
+#full-story .chapter-header.on img{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* For Webkit browsers */
+  filter: gray; /* For IE 6 - 9 */
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+}
+
+#full-story .chapter-header .title{
+  position:absolute;
+  width:100%;
+  top:-20px;
+  left:0;
+  right:0;
+  opacity:0;
+  text-align:center;
+  color:#fff;
+  z-index:2;
+  font-size:36px;
+  font-family: "Harriet Text Bold";
+  font-weight:bold;
+  transition: all 1s ease-in-out;
+  overflow:hidden;
+}
+
+#full-story .chapter-header .number{
+  width:auto;
+  float:left;
+  padding:10px 15px 13px; 
+  margin-top:5px;
+  margin-left:70px;
+  border:1px solid #fff;
+  font-family:'Harriet Text';
+  font-size:14px;
+  color:#fff;
+  letter-spacing:2px; 
+  text-transform:uppercase;
+}
+
+#full-story .chapter-header .title-words{
+  margin-top:5px;
+  position:relative;
+  font-family:'baltobold';
+  font-weight:normal;
+  width:60%;
+  float:right;
+  text-align:left;
+}
+
+#full-story .chapter-header .title span{
+  display:inline-block;
+  padding:0 10px 5px;
+  margin-bottom:5px;
+  font-family:'baltobold';
+  font-size:15px;
+  background:url(../img/sqwiggle.png) repeat-x center bottom;
+}
+
+#full-story .chapter-header .texture{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  opacity:0;
+  background-image:url(../img/texture.png);
+  transition: all 1.5s ease-in-out;
+}
+
+#footnotes{
+  display:none; 
+}
+
+h3 .footnote-link sup{
+  line-height:1.8;
+}
+
+.footnote-link sup{
+  line-height:14px;
+}
+
+.footnote-link{
+  background-color: #cd251f;
+  color: #f8f7f3;
+  padding: 0 6px;
+  border-radius: 3px;
+  vertical-align: sub;
+  display: inline-block;
+  height: 15px;
+  margin: 0 2px;
+  font-family: "baltobold","Knockout 52 A","Knockout 52 B",HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+.footnote-box{
+  position: absolute;
+  z-index: 10000;
+  padding: 25px;
+  background-color: #fff;
+  border: 1px solid #6C6E6D;
+  box-shadow: 2px 2px 10px 0 rgba(0,0,0,.4);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: .01em;
+  display: none;
+}
+
+.footnote-box a.footnote-close{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: block;
+  color: #6C6E6D;
+  border: 1px solid #6C6E6D;
+  width: 15px;
+  text-align: center;
+  height: 15px;
+  line-height: 12px;
+  font-weight: 300;
+  border-radius: 2px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  #full-story{
+    padding:50px 2.5%;
+  }
+
+  #full-story .chapter-header{
+    height:400px;
+  }
+
+  #full-story .character-section{
+    width:100%;
+  }
+
+  #full-story .character-section p, #full-story .character-section blockquote{
+    width:55%;
+    margin-right:5%;
+    margin-top:5px;
+  }
+
+  #full-story .character-section .actor img{
+    width:40px;
+    height:40px;
+  }
+  #full-story .character-section .actor h3{
+    margin-top:5px;
+  }
+  
+  #full-story .instructions{
+    padding-left:50px; 
+    margin-bottom:20px;
+  }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+  header a.grantland-logo{ width:125px; left:0px; margin-left:0px; }
+  header a.facebook, header a.twitter{ width:15px; height:15px; background-size:100%; margin-top:11px; }
+  header a.twitter:hover, header a.facebook:hover{ background-position:0px -15px; }
+  #opener{display:none;}
+  #opener img{ display:none !important;}
+  .opening-story{ width:90%; margin:40px 5% 25px;}
+  .opening-story p{ font-size:16px; line-height:24px; }
+  .opening-story .hed{ height:auto; position:relative; margin-bottom:40px; }
+  .opening-story .hed .hed-wrap{ position:relative; margin-top:20px; -webkit-transform:translateY(0); -ms-transform:translateY(0); transform:translateY(0); }
+  .opening-story .hed .hed-wrap .mobile-lead{ display:block; width:110%; max-width:110%; margin-left:-5.5%; margin-bottom:10px; ma }
+  .opening-story h1{ font-size:50px; letter-spacing:-1px; line-height:100%; }
+  .opening-story h2{ font-size:40px; margin-bottom:2px; }
+  .opening-story h4{ font-size:11px; letter-spacing:2px; margin:0 0 20px;}
+  .opening-story h4 strong{ font-size:11px; font-family:'baltobold'; font-weight:normal; letter-spacing:2px; }
+  div.scroll-arrow{display:none;}
+  #character-wrap{height:1px; min-height:0;}
+
+  #full-story{ padding:50px 5%; }
+  #full-story .chapter-header{height:140px !important; text-align:center; }
+  #full-story .chapter-header .title{font-size:31px; margin-top:-5px;}
+  #full-story .chapter-header img{ top:0px !important; transform:translate(0,0) !important; -webkit-transform:translate(0,0) !important; -ms-transform:translate(0,0) !important;}
+  #full-story .chapter-header .number{ display:inline-block; float:none; margin:0px auto 10px; padding:5px; font-size:10px; letter-spacing:1px;}
+  #full-story .chapter-header .title-words{display:block; width:auto; float:none; margin:0 auto; text-align:center; line-height:100%}
+  #full-story .instructions{display:none; }
+  #full-story .character-section{width:100%; margin-bottom:0px; }
+  #full-story .character-section .actor{position:relative; width:100%; float:none; }
+  #full-story .character-section .actor img{display:none;}
+  #full-story .character-section .actor h3 { font-size:13px; color:#aaa;}
+  #full-story .character-section .actor .character{opacity:1 !important; font-size:11px; color:#aaa; }
+  #full-story .character-section p{ margin-top:3px; }
+  #full-story .character-section p, #full-story .character-section blockquote{ width:100%; float:none; margin-bottom:15px;}
+  #full-story .character-section p.youtube{display:none; }
+  #full-story .character-section p.boogie-pullquote{ font-size:28px; }
+  #full-story .character-section p.boogie-pullquote .attribution{ font-size:12px; color:#aaa; line-height:125%;}
+  #full-story .character-section p.boogie-pullquote .hangingquote{ margin-left:0;}
+
+  .firstcharacter{float: left; font-size: 50px; line-height: 40px; padding-top: 5px; padding-right: 5px; padding-left: 3px;}
+}
